@@ -1,6 +1,6 @@
 from flask import Flask, url_for
 
-from app.lib import feature
+from app.libs import feature
 
 print('scriitori')
 

@@ -1,3 +1,4 @@
+import sys
 from flask import Flask, url_for
 
 from app.libs import feature
@@ -35,3 +36,11 @@ def curent_lit():
     ret += f"Scriitor: <a href={url_for('scriitor')}>Ioan Slavici</a><br>"
     ret += f"<a href={url_for('acasa')}>Acasa</a>"
     return ret
+@app.cli.command()
+def test():
+    """
+    Rulare 'unit tests'
+    Apelare pytest din aplicatia systest, cu ajutorul comenzii flask.
+    """
+    import pytest
+    sys.exit(pytest.main(["."]))

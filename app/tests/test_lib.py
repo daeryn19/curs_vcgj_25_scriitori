@@ -1,4 +1,4 @@
-import  lib.feature  as  feature
+import  libs.feature  as  feature
 
 def test_opera_reprezentativa():
     assert feature.gaseste_opera_reprezentativa() == "Moara cu Noroc"

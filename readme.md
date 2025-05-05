@@ -1,0 +1,119 @@
+`scriitori`
+===================================
+# Cuprins
+
+1. [Descriere aplicatie](#descriere-aplicatie)
+1. [Descriere versiune](#descriere-versiune)
+   1. [Buguri cunoscute](#probleme-cunoscute)
+1. [Configurare](#configurare)
+1. [Exemple pagina web](#exemple-pagina-web)
+1. [Testare cu pytest](#testare-cu-pytest)
+1. [Verificare statica. pylint - calitate cod](#verificare-statica-cu-pylint)
+1. [Docker](#docker)
+1. [DevOps](#devops-ci)
+   1. [Pipeline Jenkins](#exemplu-executie-pipeline-jenkins)
+1. [Bibliografie](#bibliografie)
+
+# Descriere aplicatie
+
+Aplicația dezvoltată are ca temă scriitori și este parte din proiectul VCGJ din cadrul cursului Servicii Cloud și Containerizare. 
+Aceasta este realizată folosind framework-ul Flask, în Python, și conține funcționalitate specifică scriitorului Ioan Slavici.
+Funcționalitatea implementată include afișarea informațiilor despre:
+Opera reprezentativă – "Moara cu noroc"
+Curentul literar – Realism
+
+Pentru o navigare mai usoara in browser, pagina principala contine link-uri catre celelalte pagini. Fiecare pagina specifica (cea care afiseaza informatii despre Ioan Slavici, opera reprezentativa si curentul literar) contine un link catre celelalte pagini.
+
+Aplicatia include suport pentru containerizare in fisierul Dockerfile din directorul principal al aplicatiei.
+
+Din punct de vedere al testarii, este inculs unit testing cu pytest, pentru o parte din functiile din biblioteca aplicatiei, aflate in directorul app/libs.
+
+DevOps CI. Pipeline-ul pentru Jenkins este definint in fisierul Jenkinsfile. 
+
+Ambele pipeline-uri cloneaza codul, creaza mediul de lucru virtual (venv-ul), il activeaza si ruleaza testele (unit test - cu pytest, verificari statice cu pylint).
+# Descriere versiune
+## v0.1 – Funcționalitate de bază implementată
+
+* ruta standard '/' - URL: http://127.0.0.1:5011
+ * rute in aplicatia WEB pentru:
+   * scriitor: '/ioan_slavici' - URL: 'http://127.0.0.1:5011/ioan_slavici',
+   * opera reprezentativa: '/opera_reprezentativa' - 'http://127.0.0.1:5011/ioan_slavici/opera_reprezentativa'
+   * curent literar:       '/curent_literar'       - 'http://127.0.0.1:5011/ioan_slavici/curent_literar'
+
+# Configurare
+[cuprins](#cuprins)
+
+Configurare .venv si instalare pachete
+
+In directorul 'app' rulati comenzile:
+1) activeaza_venv: Incearca sa activeze venv-ul. 
+                   Daca nu poate, configureaza venv-ul in directorul .venv si apoi instaleaza flask si flask-bootstrap.
+                   La urmatoarea rulare, va activa doar venv-ul.
+
+2) ruleaza_aplicatia: De rulat doar dupa activarea venv-ului. 
+                      Va porni serverul pe IP: 127.0.0.1 si port: 5011.
+                      Acces server din browser: http://127.0.0.1:501
+# EXEMPLU activare venv si rulare
+```text
+    dana@dana:scriitori$ source activeaza_venv 
+    SUCCESS: venv was activated.
+
+   (.venv) dana@dana:scriitori$ source ruleaza_aplicatia 
+    scriitori
+    WARNING: rand 6 []
+     * Serving Flask app 'scriitori'
+     * Debug mode: off
+    WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+     * Running on http://127.0.0.1:5011
+    Press CTRL+C to quit
+     * Restarting with stat
+    scriitori
+```
+# Testare cu pytest
+[cuprins](#cuprins)
+
+O parte din functiile din biblioteca de functii a aplicatie:
+- directorul libs, fisierul:
+  - feature.py
+au teste de tip 'unit - test' asociate - adica - este apelata functia si se asteapta o anumita valoare.
+Testul compara valoarea obtinuta la apelul functie cu valoarea asteptata si returneaza PASS daca valoarea primita de la functie este cea asteptata si FAIL in caz contrar.
+
+Pentru testare s-a folosit pachetul **pytest** din python. Acesta se afla in lista de pachete care trebuie instalate, in fisierul quickrequirements.txt.
+Executia testelor se face cu oricare din comenzile de mai jos, apelate din directorul aplicatiei - *scriitori*:
+```
+   pytest
+   python -m pytest
+   flask --app scriitori test
+
+   Ultima commanda este posibila datorita implementarii comenzii cli test in aplicatia sysinfo.
+   Aceasta comanda CLI, apeleaza pytest din program/script:
+       pytest.main(["."])
+   
+   Ultima varianta, desi echivalenta cu primele doua, este mai eleganta.
+   Primele doua apeleaza pytest ca fiind ceva extern aplicatiei. 
+   Aici insa avem optiunea de a se 'autotesta' inclusa in aplicatie.
+```
+# Verificare statica cu pylint
+[cuprins](#cuprins)
+
+- **pylint** - pachet python folosit la testarea calitatii codului (spatii, nume variabile, variabile neutilizate etc.)
+- in cazul de fata, problemele returnate de pylint doar sunt afisate, nu sunt considerate erori
+```
+   pylint scriitory.py
+
+# Docker
+[cuprins](#cuprins)
+
+# DevOps CI
+[cuprins](#cuprins)
+- CI = Continuous Integration
+
+## Exemplu executie pipeline Jenkins
+Pentru a se putea executa si ultimul pas din pipeline-ul de Jenkins din acest branch - creare container docker, trebuie ca userul care ruleaza Jenkins sa poata da comenzi de docker, fara sudo + parola.
+Puteti gasi pasii de configurare pe [docs.docker.com - linux-postinstall](https://docs.docker.com/engine/install/linux-postinstall/)
+Daca folositi masina virtuala linux, restartati masina dupa ce faceti configuratia.
+
+
+# Bibliografie:
+[cuprins](#cuprins)
+- [Github Sysinfo](https://github.com/crchende/sysinfo/tree/simplu_main)

@@ -4,12 +4,17 @@
 
 1. [Descriere aplicatie](#descriere-aplicatie)
 1. [Descriere versiune](#descriere-versiune)
-   1. [Buguri cunoscute](#probleme-cunoscute)
 1. [Configurare](#configurare)
 1. [Exemple pagina web](#exemple-pagina-web)
 1. [Testare cu pytest](#testare-cu-pytest)
 1. [Verificare statica. pylint - calitate cod](#verificare-statica-cu-pylint)
 1. [Docker](#docker)
+   1. [Creare container](#creare-container)
+   1. [Executie container](#executie-container)
+   1. [Vizualizare containere](#vizualizare-containere)
+   1. [Oprire / pornire container - cu aplicatia din container](#oprire-pornire-container-cu-aplicatia-din-containere)
+   1. [Curatenie - stergere containere / imagini](#curatenie-stergere-containere-cu-aplicatia-din-containere)
+   1. [Lista de comenzi docker utile:](#lista-comenzi-docker-utile)
 1. [DevOps](#devops-ci)
    1. [Pipeline Jenkins](#exemplu-executie-pipeline-jenkins)
 1. [Bibliografie](#bibliografie)
@@ -103,6 +108,93 @@ Executia testelor se face cu oricare din comenzile de mai jos, apelate din direc
 
 # Docker
 [cuprins](#cuprins)
+##Creare container
+=================
+Dupa crearea Dockerfile, in acelasi director cu acest fisier - pentru acest caz
+scriitori, trebuie executata comanda:
+ sudo docker build -t scriitori:v01 .
+
+Aceasta creeaza o imagine de container care poate fi vizualizata cu comanda:
+ 
+    sudo docker images
+
+    ex:
+    REPOSITORY                  TAG             IMAGE ID       CREATED       SIZE
+    scriitori                     v01             beadef0060e0   2 hours ago   110MB
+    python                      3.8-alpine      0ccdcbe88eaa   5 days ago    47.5MB
+
+    Avem doua imagini:
+    - imaginea de baza, python:3.8-alpine, folosita pentru a
+      crea imaginea scriitori:v01
+    - imaginea scriitori, creata pe baza imaginii python, in care se
+      creaza venv-ul, se instaleaza pachetele necesare aplicatiei, se copiaza
+      codul aplicatiei - conform Dockerfile
+Executie container
+===================
+Pentru a genera un container din fisierul imagine trebuie executata comanda run:
+
+    sudo docker run --name scriitori -p 8020:5011 scriitori:v01 
+    
+    Aceasta va crea containerul si va si porni executia acestuia.
+    
+    Portul pe calculator unde va raspunde serverul din docker este  - 8020
+    Portul in interiorul containerului este                         - 5011.
+
+    Rezultatul executie containerului va fi vizibil in terminalul de unde s-a dat
+    comanda.
+    In consola apar mesajele generate de aplicatia din container.
+    
+    -d - optiune care trebuie adaugata pentru a rula containerul in background
+         altfel, consola din care ruleaza containerul este blocata pe timpul
+         rularii acestuia
+         
+    NOTA:
+    --nume <nume>  este de folosit aceasta optiune.
+                   altfel docker va crea un string aleator si-l va aloca ca nume
+                   container-ului pornit
+         
+Vizualizare containere
+=======================
+
+    - vizualizare continere care ruleaza
+
+
+    sudo docker ps
+
+    CONTAINER ID   IMAGE                            COMMAND              CREATED          STATUS          PORTS                                       NAMES
+    0e9388ac0d7d   scriitori:v01                      "./dockerstart.sh"   2 hours ago      Up 22 minutes   0.0.0.0:8020->5011/tcp, :::8020->5011/tcp   scriitori
+
+    - vizualizarea tuturor containerelor (inclusiv cele oprite)
+
+    
+    sudo docker ps -a
+
+    CONTAINER ID   IMAGE                            COMMAND              CREATED          STATUS                     PORTS                                       NAMES
+    0e9388ac0d7d   scriitori:v01                      "./dockerstart.sh"   2 hours ago      Exited (0) 6 seconds ago                                            scriitori
+
+
+
+Oprire / pornire container - cu aplicatia din container
+=======================================================
+    sudo docker stop scriitori
+    sudo docker start scriitori
+
+Curatenie - stergere containere / imagini
+=========================================================
+
+    sudo docker rm  <container (id, nume)r>
+    sudo docker rmi <imagine (id, nume:tag ...)>
+
+Lista de comenzi docker utile:
+=============================
+        Creare container:            sudo docker build -t <nume>:<tag>
+        Vizualizare imagini:         sudo docker images
+        Vizualizare containere:      sudo docker ps / sudo docker ps -a
+        Rulare container:            sudo docker run -name <nume> -p <port PC>:<port Container> <imagine> [-d] # -d pentru a rula in background
+        Stop container:              sudo docker stop
+        Start container:             sudo docker start
+        Executie shell:              sudo docker exec -it <nume> sh
+        Atasare la container:        sudo docker atach <nume>
 
 # DevOps CI
 [cuprins](#cuprins)

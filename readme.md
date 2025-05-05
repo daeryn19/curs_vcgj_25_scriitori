@@ -105,11 +105,15 @@ Executia testelor se face cu oricare din comenzile de mai jos, apelate din direc
 - in cazul de fata, problemele returnate de pylint doar sunt afisate, nu sunt considerate erori
 ```
    pylint scriitory.py
+```
+
+
 
 # Docker
 [cuprins](#cuprins)
+
 ##Creare container
-=================
+
 Dupa crearea Dockerfile, in acelasi director cu acest fisier - pentru acest caz
 scriitori, trebuie executata comanda:
  sudo docker build -t scriitori:v01 .
@@ -128,33 +132,32 @@ Aceasta creeaza o imagine de container care poate fi vizualizata cu comanda:
       crea imaginea scriitori:v01
     - imaginea scriitori, creata pe baza imaginii python, in care se
       creaza venv-ul, se instaleaza pachetele necesare aplicatiei, se copiaza
-      codul aplicatiei - conform Dockerfile
-Executie container
-===================
+[cuprins](#cuprins)      codul aplicatiei - conform Dockerfile
+##Executie container
+
 Pentru a genera un container din fisierul imagine trebuie executata comanda run:
 
     sudo docker run --name scriitori -p 8020:5011 scriitori:v01 
-    
+
     Aceasta va crea containerul si va si porni executia acestuia.
-    
+
     Portul pe calculator unde va raspunde serverul din docker este  - 8020
     Portul in interiorul containerului este                         - 5011.
 
     Rezultatul executie containerului va fi vizibil in terminalul de unde s-a dat
     comanda.
     In consola apar mesajele generate de aplicatia din container.
-    
+
     -d - optiune care trebuie adaugata pentru a rula containerul in background
          altfel, consola din care ruleaza containerul este blocata pe timpul
          rularii acestuia
-         
+ 
     NOTA:
     --nume <nume>  este de folosit aceasta optiune.
                    altfel docker va crea un string aleator si-l va aloca ca nume
                    container-ului pornit
-         
-Vizualizare containere
-=======================
+
+##Vizualizare containere
 
     - vizualizare continere care ruleaza
 
@@ -166,7 +169,7 @@ Vizualizare containere
 
     - vizualizarea tuturor containerelor (inclusiv cele oprite)
 
-    
+
     sudo docker ps -a
 
     CONTAINER ID   IMAGE                            COMMAND              CREATED          STATUS                     PORTS                                       NAMES
@@ -174,19 +177,19 @@ Vizualizare containere
 
 
 
-Oprire / pornire container - cu aplicatia din container
-=======================================================
+##Oprire / pornire container - cu aplicatia din container
+
     sudo docker stop scriitori
     sudo docker start scriitori
 
-Curatenie - stergere containere / imagini
-=========================================================
+##Curatenie - stergere containere / imagini
+
 
     sudo docker rm  <container (id, nume)r>
     sudo docker rmi <imagine (id, nume:tag ...)>
 
-Lista de comenzi docker utile:
-=============================
+##Lista de comenzi docker utile:
+
         Creare container:            sudo docker build -t <nume>:<tag>
         Vizualizare imagini:         sudo docker images
         Vizualizare containere:      sudo docker ps / sudo docker ps -a
@@ -195,6 +198,7 @@ Lista de comenzi docker utile:
         Start container:             sudo docker start
         Executie shell:              sudo docker exec -it <nume> sh
         Atasare la container:        sudo docker atach <nume>
+
 
 # DevOps CI
 [cuprins](#cuprins)

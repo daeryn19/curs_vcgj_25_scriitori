@@ -2,7 +2,7 @@ import sys
 
 from flask import Flask, url_for
 
-from app.lib import biblioteca_scriitori
+from app.libs import biblioteca_scriitori
 
 
 print('scriitori')

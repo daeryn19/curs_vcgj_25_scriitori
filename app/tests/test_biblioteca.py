@@ -1,4 +1,4 @@
-import  lib.biblioteca_scriitori  as  biblioteca_scriitori
+import  libs.biblioteca_scriitori  as  biblioteca_scriitori
 
 def test_opera_reprezentativa_Caragiale():
     assert biblioteca_scriitori.opera_reprezentativa_Caragiale() == "O scrisoare pierduta"

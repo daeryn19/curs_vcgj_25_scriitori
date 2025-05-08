@@ -151,23 +151,15 @@ Your code has been rated at 6.86/10 (previous run: 8.00/10, -1.14)
 
 ##Creare container
 
-Crearea Dockerfile cu comanda:
-
-touch Dockerfile
-
-Deschiderea acestuia intr-un editor de text cu comanda:
-
-nano Dockerfile
-
-Scrierea codul conform sysinfo/Dockerfile
-
-Aceeasi operatie o efectuam si pentru fisierul dockerstart.sh
-
 Crearea imaginii scriitori:v01 cu comanda:
 
 sudo docker build -t scriitori:v01 .
 
-Vizualizare imagine:
+
+Vizualizare imagine cu comanda:
+
+sudo docker ps -a
+
 ```text 
     (.venv) mara@ubuntu:~/Desktop/proiect_scc/curs_vcgj_25_scriitori$ sudo docker images
 [sudo] password for mara: 
@@ -178,13 +170,12 @@ sysinfo      v01           00871cd7feea   7 weeks ago    275MB
 
 ##Executie container
 
-Genere container cu  comanda:
+Generare container cu comanda:
 
     sudo docker run --name scriitori -p 8020:5011 scriitori:v01 
 
 ##Vizualizare containere
-
-Vizualizarea containere
+e
 ```text
 (.venv) mara@ubuntu:~/Desktop/proiect_scc/curs_vcgj_25_scriitori$ sudo docker ps -a
 CONTAINER ID   IMAGE           COMMAND              CREATED       STATUS                   PORTS     NAMES

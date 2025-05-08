@@ -1,7 +1,7 @@
 FROM python:3.10-alpine
 
 # Setăm variabila de mediu pentru Flask
-ENV FLASK_APP=app/443D_scriitori.py
+ENV FLASK_APP=app/scriitori.py
 ENV FLASK_RUN_PORT=5011
 ENV FLASK_RUN_HOST=0.0.0.0
 

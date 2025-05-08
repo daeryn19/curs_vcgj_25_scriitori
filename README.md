@@ -1,5 +1,5 @@
 # curs_vcgj_25_scriitori
-# Scriitori Flask App
+# Scriitori
 
 ## Cuprins
 

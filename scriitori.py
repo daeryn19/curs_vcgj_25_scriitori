@@ -22,6 +22,7 @@ def acasa():
 @app.route ("/Ion_Luca_Caragiale", methods=['GET'])
 def scriitor():
     ret = "<h1>Ion Luca Caragiale</h1>"
+    ret += "<p>Ion Luca Caragiale a fost unul dintre cei mai importanti dramaturgi si scriitori romani, cunoscut pentru satira sa fina si personajele memorabile.</p>"
     ret += f"<a href={url_for('opera_reprezentativa')}>Opera reprezentativa</a><br>"
     ret += f"<a href={url_for('curent_literar')}>Curent literar</a><br>"
     ret += f"<a href={url_for('acasa')}>Pagina principala</a>"

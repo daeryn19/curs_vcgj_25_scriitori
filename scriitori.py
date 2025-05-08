@@ -31,6 +31,7 @@ def scriitor():
 @app.route ("/Ion_Luca_Caragiale/Opera_reprezentativa", methods=['GET'])
 def opera_reprezentativa():
     ret = "<h1>"+biblioteca_scriitori.opera_reprezentativa_Caragiale()+"</h1>"
+    ret +="<p>Opera reprezentativa <em>O scrisoare pierduta</em> este o comedie de moravuri care satirizeaza viata politica si societatea romaneasca din secolul al XIX-lea.</p>"
     ret += f"<a href={url_for('scriitor')}>Ion Luca Caragiale</a><br>"
     ret += f"<a href={url_for('curent_literar')}>Curent literar</a><br>"
     ret += f"<a href={url_for('acasa')}>Pagina principala</a>"
@@ -40,6 +41,7 @@ def opera_reprezentativa():
 @app.route ("/Ion_Luca_Caragiale/Curent_literar", methods=['GET'])
 def curent_literar():
     ret = "<h1>"+biblioteca_scriitori.curent_literar_Caragiale()+"</h1>"
+    ret += "<p>Realismul este un curent literar care urmareste redarea fidela a realitatii, punand accent pe prezentarea vietii cotidiene si a problemelor sociale.</p>"
     ret += f"<a href={url_for('opera_reprezentativa')}>Opera reprezentativa</a><br>"
     ret += f"<a href={url_for('scriitor')}>Ion Luca Caragiale</a><br>"
     ret += f"<a href={url_for('acasa')}>Pagina principala</a>"

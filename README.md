@@ -146,6 +146,53 @@ scriitori.py:59:4: C0415: Import outside toplevel (pytest) (import-outside-tople
 Your code has been rated at 6.86/10 (previous run: 8.00/10, -1.14)
 ```
 
+# Docker
+[cuprins](#cuprins)
+
+##Creare container
+
+Crearea Dockerfile cu comanda:
+
+touch Dockerfile
+
+Deschiderea acestuia intr-un editor de text cu comanda:
+
+nano Dockerfile
+
+Scrierea codul conform sysinfo/Dockerfile
+
+Aceeasi operatie o efectuam si pentru fisierul dockerstart.sh
+
+Crearea imaginii scriitori:v01 cu comanda:
+
+sudo docker build -t scriitori:v01 .
+
+Vizualizare imagine:
+```text 
+    (.venv) mara@ubuntu:~/Desktop/proiect_scc/curs_vcgj_25_scriitori$ sudo docker images
+[sudo] password for mara: 
+REPOSITORY   TAG           IMAGE ID       CREATED        SIZE
+scriitori    v01           1b9b74e75305   2 days ago     86MB
+sysinfo      v01           00871cd7feea   7 weeks ago    275MB
+```
+
+##Executie container
+
+Genere container cu  comanda:
+
+    sudo docker run --name scriitori -p 8020:5011 scriitori:v01 
+
+##Vizualizare containere
+
+Vizualizarea containere
+```text
+(.venv) mara@ubuntu:~/Desktop/proiect_scc/curs_vcgj_25_scriitori$ sudo docker ps -a
+CONTAINER ID   IMAGE           COMMAND              CREATED       STATUS                   PORTS     NAMES
+172574cc13fb   scriitori:v01   "./dockerstart.sh"   2 days ago    Exited (0) 4 hours ago             scriitori
+2a50035b5ada   sysinfo:v01     "./dockerstart.sh"   7 weeks ago   Exited (0) 7 weeks ago             sysinfo
+```
+
+
 # DevOps CI
 [cuprins](#cuprins)
 - CI = Continuous Integration

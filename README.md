@@ -14,7 +14,6 @@
 1. [Utilizare Docker si containerizare alicatie](https://github.com/crchende/sysinfo/blob/main/doc/dockerdoc.md)
 1. [DevOps](#devops-ci)
    1. [Pipeline Jenkins](#exemplu-executie-pipeline-jenkins)
-   1. [Workflow GitHub Actions](#exemplu-executie-workflow-in-github-actions)
 1. [Bibliografie](#bibliografie)
 
 # Descriere aplicatie
@@ -98,14 +97,27 @@ scriitori
 [cuprins](#cuprins)
 
 O parte din functiile din biblioteca de functii a aplicatie:
-- directorul lib, fisierele:
-  - ubuntu.py
-  - network.py
+- directorul libs, fisierele:
+  - test_biblioteca.py
 au teste de tip 'unit - test' asociate - adica - este apelata functia si se asteapta o anumita valoare.
 Testul compara valoarea obtinuta la apelul functie cu valoarea asteptata si returneaza PASS daca valoarea primita de la functie este cea asteptata si FAIL in caz contrar.
 
 Pentru testare s-a folosit pachetul **pytest** din python. Acesta se afla in lista de pachete care trebuie instalate, in fisierul quickrequirements.txt.
 
+```text
+
+(.venv) mara@ubuntu:~/Desktop/proiect_scc/curs_vcgj_25_scriitori$ pytest
+================================================================================= test session starts ==================================================================================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/mara/Desktop/proiect_scc/curs_vcgj_25_scriitori
+configfile: pytest.ini
+collected 2 items                                                                                                                                                                      
+
+app/tests/test_biblioteca.py::test_opera_reprezentativa_Caragiale PASSED                                                                                                         [ 50%]
+app/tests/test_biblioteca.py::test_curent_literar_Caragiale PASSED                                                                                                               [100%]
+
+================================================================================== 2 passed in 0.02s ===================================================================================
+```
 
 
 # Verificare statica cu pylint
@@ -114,37 +126,34 @@ Pentru testare s-a folosit pachetul **pytest** din python. Acesta se afla in lis
 - **pylint** - pachet python folosit la testarea calitatii codului (spatii, nume variabile, variabile neutilizate etc.)
 - in cazul de fata, problemele returnate de pylint doar sunt afisate, nu sunt considerate erori
 
+```text
 
+(.venv) mara@ubuntu:~/Desktop/proiect_scc/curs_vcgj_25_scriitori$ pylint scriitori.py
+************* Module scriitori
+scriitori.py:17:0: C0301: Line too long (287/100) (line-too-long)
+scriitori.py:18:0: C0301: Line too long (121/100) (line-too-long)
+scriitori.py:25:0: C0301: Line too long (166/100) (line-too-long)
+scriitori.py:34:0: C0301: Line too long (177/100) (line-too-long)
+scriitori.py:44:0: C0301: Line too long (168/100) (line-too-long)
+scriitori.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scriitori.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
+scriitori.py:23:0: C0116: Missing function or method docstring (missing-function-docstring)
+scriitori.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
+scriitori.py:42:0: C0116: Missing function or method docstring (missing-function-docstring)
+scriitori.py:59:4: C0415: Import outside toplevel (pytest) (import-outside-toplevel)
 
-# Reprezentari grafice
-[cuprins](#cuprins)
-* Pachetul matplotlib pune la dispozitie o metoda de a face reprezentari grafice
-* O aplicatie concretea pentru informatii de sistem, pot fi grafice cu utilizarea memoriei, a procesorului, retelei etc.
-* Pentru simplitate aplicatia curenta genereaza valorile si afiseaza graficul unei functii de grad 2: **y = x*x**
-    * valorile sunt discrete, x in {-10, -9, ... 9, 10}
-    * matplotlib poate desena punctele sau un grafic continuu pe baza acestor puncte
-
-
-## Exemplu pagina web cu grafice
-
-* sunt mai multe grafice in pagina, captura cuprinde doar doua reprezentari cu puncte, cu culori si caractere diferite:
-![image](https://github.com/crchende/sysinfo/assets/57460107/02c977f7-16b4-48c2-9747-3c6a3885af48)
-
-
+------------------------------------------------------------------
+Your code has been rated at 6.86/10 (previous run: 8.00/10, -1.14)
+```
 
 # DevOps CI
 [cuprins](#cuprins)
 - CI = Continuous Integration
 
 ## Exemplu executie pipeline Jenkins
-![image](https://github.com/crchende/sysinfo/assets/57460107/8fdaa372-44ee-409b-855c-053e78baf800)
+![Captura terminal](static/images/jenkins.png)
 
-## Exemplu executie Workflow in GitHub Actions
-![image](https://github.com/crchende/sysinfo/assets/57460107/9981d699-aa34-4ec5-aa94-d0284ea93fca)
 
-Aplicatia poate fi accesata si de pe AZURE
-
-URL: https://sysinfov3.azurewebsites.net
 
 
 # Bibliografie:

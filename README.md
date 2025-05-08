@@ -175,7 +175,7 @@ Generare container cu comanda:
     sudo docker run --name scriitori -p 8020:5011 scriitori:v01 
 
 ##Vizualizare containere
-e
+
 ```text
 (.venv) mara@ubuntu:~/Desktop/proiect_scc/curs_vcgj_25_scriitori$ sudo docker ps -a
 CONTAINER ID   IMAGE           COMMAND              CREATED       STATUS                   PORTS     NAMES

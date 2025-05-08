@@ -84,47 +84,15 @@ Press CTRL+C to quit
 scriitori
 
 ```
+
 ![Captura terminal](static/images/activeaza_aplicatia.png)
-
-
 
 
 # EXEMPLE pagina web 
 ## Pagina principala
 
-Varianta avansat main:
+![Captura terminal](static/images/pagina_principala.png)
 
-![image](https://github.com/crchende/sysinfo/assets/57460107/a2620e64-98dd-4fdc-9251-0454bc799be9)
-
-
-Varianta simplu_main:
-
-![image](https://github.com/crchende/sysinfo/assets/57460107/97f4c5ff-1c12-4ec6-8334-ad1950d8f664)
-
-## Vizualizare versiune ubuntu 
-
-Varianta simplu_main:
-
-![image](https://github.com/crchende/sysinfo/assets/57460107/0316f339-a277-4418-a1b0-d8ec0f022472)
-
-# Comutare intre branch-uri: avansat_main si simplu_main
-
-```text
-   git stash
-   git checkout simplu_main
-   source ruleaza_aplicatia
-
-   [Ctrl-C] pentru a opri aplicatia
-
-   git stash
-   git checkout avansat_main
-   source ruleaza_aplicatia
-
-   NOTA:
-   'git stash'   - are rolul de a salva local (in stash) fisierele imagine generate de aplicatie
-                   daca accesati link-ul 'Grafice' din meniu
-                 - fara aceasta comanda 'git checkout' da eroare
-```
 
 # Testare cu pytest
 [cuprins](#cuprins)

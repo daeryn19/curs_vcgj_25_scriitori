@@ -9,7 +9,7 @@ class TestAutorInfo(unittest.TestCase):
         self.assertTrue("John Steinbeck" in descriere)
 
     def test_carti(self):
-        culoare = get_carti()
+        carti = get_carti()
         self.assertIsInstance(carti, str)
         self.assertTrue("carti" in carti or "John Steinbeck" in carti)
 

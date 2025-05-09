@@ -18,30 +18,29 @@ pipeline {
             }
         }
 
-    stage('Pylint - Calitate cod') {
-        steps {
-        echo 'Rulare pylint pe cod...'
-        sh '''
-            echo 'Analiză lib/'
-            ./venv/bin/pylint --exit-zero lib/
+        stage('Pylint - Calitate cod') {
+            steps {
+                echo 'Rulare pylint pe codul John_Steinbeck...'
+                sh '''
+                    . ${VENV_PATH}/bin/activate
+                    echo 'Analiză lib/.py'
+                    pylint --exit-zero lib/.py  true
 
-            echo 'Analiză test/'
-            ./venv/bin/pylint --exit-zero test/
+                    echo 'Analiză test/.py'
+                    pylint --exit-zero test/.py  true
 
-            echo 'Analiză John_Steinbeck.py'
-            PYTHONPATH=app ./venv/bin/pylint --exit-zero John_Steinbeck.py
-        '''
-    }
-}
-
+                    echo 'Analiză John_Steinbeck.py'
+                    pylint --exit-zero John_Steinbeck.py  true
+                '''
+            }
+        }
 
         stage('Unit Testing') {
             steps {
                 echo 'Testare unitară...'
                 sh '''
                     . ${VENV_PATH}/bin/activate
-                    PYTHONPATH=app ./venv/bin/python -m unittest discover -s test
-
+                    python3 -m unittest discover -s test -p "testare.py"
                 '''
             }
         }
@@ -52,7 +51,7 @@ pipeline {
                 sh '''
                     docker build -t John_Steinbeck:v${BUILD_NUMBER} .
                     docker rm -f John_Steinbeck${BUILD_NUMBER}  true
-                    docker create --name John_Steinbeck${BUILD_NUMBER} -p 8020:5000 John_Steinbeck:v${BUILD_NUMBER}
+                    docker create --name vultur${BUILD_NUMBER} -p 8020:5000 John_Steinbeck:v${BUILD_NUMBER}
                 '''
             }
         }
@@ -60,7 +59,7 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline finalizat cu succes.'
+            echo 'Pipeline Vultur finalizat cu succes.'
         }
         failure {
             echo 'A apărut o eroare în pipeline.'

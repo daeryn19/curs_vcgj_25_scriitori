@@ -13,7 +13,7 @@ pipeline {
                     python3 -m venv venv
                     . ${VENV_PATH}/bin/activate
                     pip install --upgrade pip
-                    pip install -r requirements.txt
+                    pip install -r quickrequirements.txt
                 '''
             }
         }

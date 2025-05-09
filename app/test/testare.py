@@ -11,7 +11,7 @@ class TestAutorInfo(unittest.TestCase):
     def test_carti(self):
         culoare = get_carti()
         self.assertIsInstance(carti, str)
-        self.assertTrue("carti" in carti or "autor" in carti)
+        self.assertTrue("carti" in carti or "John Steinbeck" in carti)
 
 if __name__ == '__main__':
     unittest.main()

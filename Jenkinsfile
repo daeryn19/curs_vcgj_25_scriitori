@@ -40,7 +40,7 @@ pipeline {
                 echo 'Testare unitară...'
                 sh '''
                     . ${VENV_PATH}/bin/activate
-                    python3 -m unittest discover -s test -p "testare.py"
+                    PYTHONPATH=app ./venv/bin/python -m unittest discover -s test
                 '''
             }
         }

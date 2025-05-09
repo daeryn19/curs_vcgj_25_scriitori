@@ -74,6 +74,23 @@ In directorul 'app' rulati comenzile:
      * Restarting with stat
     scriitori
 ```
+![image]
+
+
+# Exemple pagina web
+[cuprins](#cuprins)
+## Pagina principala
+![image]
+
+## Pagina Ioan Slavici
+![image]
+
+## Pagina Opera reprezentativa 
+![image]
+
+## Pagina Curent literar
+![image]
+
 # Testare cu pytest
 [cuprins](#cuprins)
 

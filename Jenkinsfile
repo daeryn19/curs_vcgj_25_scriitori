@@ -18,18 +18,18 @@ pipeline {
             }
         }
 
-        stage('Pylint - Calitate cod') {
-    steps {
+    stage('Pylint - Calitate cod') {
+        steps {
         echo 'Rulare pylint pe cod...'
         sh '''
-            echo 'Analiză lib/.py'
-            ./venv/bin/pylint --exit-zero lib/.py || true
+            echo 'Analiză lib/'
+            ./venv/bin/pylint --exit-zero lib/
 
-            echo 'Analiză test/.py'
-            ./venv/bin/pylint --exit-zero test/.py || true
+            echo 'Analiză test/'
+            ./venv/bin/pylint --exit-zero test/
 
             echo 'Analiză John_Steinbeck.py'
-            ./venv/bin/pylint --exit-zero John_Steinbeck.py || true
+            PYTHONPATH=app ./venv/bin/pylint --exit-zero John_Steinbeck.py
         '''
     }
 }
@@ -40,7 +40,8 @@ pipeline {
                 echo 'Testare unitară...'
                 sh '''
                     . ${VENV_PATH}/bin/activate
-                    python3 -m unittest discover -s test -p "testare.py"
+                    PYTHONPATH=app ./venv/bin/python -m unittest discover -s test
+
                 '''
             }
         }
@@ -59,7 +60,7 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline Capibara finalizat cu succes.'
+            echo 'Pipeline finalizat cu succes.'
         }
         failure {
             echo 'A apărut o eroare în pipeline.'

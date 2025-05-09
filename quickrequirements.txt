@@ -1,3 +1,6 @@
 flask
 pylint
+<<<<<<< HEAD
 pytest
+=======
+>>>>>>> 4872eb0deb34210524241040713f9c36a7081d1b

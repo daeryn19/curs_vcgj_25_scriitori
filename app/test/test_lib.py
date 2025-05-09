@@ -1,4 +1,4 @@
-import  lib.feature  as  feature
+import  biblioteca.feature  as  feature
 
 def test_opera_reprezentativa():
     assert feature.opera_reprezentativa() == "Crima din Orient Express"

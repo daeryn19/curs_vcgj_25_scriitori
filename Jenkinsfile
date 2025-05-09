@@ -20,8 +20,8 @@ pipeline {
             steps {
                 sh '''
                     . ./activeaza_venv;
-                    echo '\n\nVerificare libs/*.py cu pylint\n';
-                    pylint --exit-zero libs/*.py;
+                    echo '\n\nVerificare biblioteca/*.py cu pylint\n';
+                    pylint --exit-zero biblioteca/*.py;
 
                     echo '\n\nVerificare tests/*.py cu pylint';
                     pylint --exit-zero tests/*.py;

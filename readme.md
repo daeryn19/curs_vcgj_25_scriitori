@@ -234,7 +234,8 @@ Inspectare container - conectare la container-ul care ruleaza cu shell
 Pentru a se putea executa si ultimul pas din pipeline-ul de Jenkins din acest branch - creare container docker, trebuie ca userul care ruleaza Jenkins sa poata da comenzi de docker, fara sudo + parola.
 Puteti gasi pasii de configurare pe [docs.docker.com - linux-postinstall](https://docs.docker.com/engine/install/linux-postinstall/)
 Daca folositi masina virtuala linux, restartati masina dupa ce faceti configuratia.
-         dana@dana:scriitori$ jenkins
+         
+      dana@dana:scriitori$ jenkins
 
 
 # Bibliografie:

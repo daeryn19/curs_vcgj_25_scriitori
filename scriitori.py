@@ -11,7 +11,7 @@ app = Flask(__name__)
 def acasa():
     ret = "<center><h1>Mari scriitori romani</h1></center>"
     ret += "<p>Aceasta platforma isi propune sa valorifice si sa promoveze contributia esentiala a scriitorilor romani la patrimoniul literar national si universal. De-a lungul timpului, literatura romana a cunoscut figuri remarcabile ale gandirii, creativitatii si expresivitatii artistice, ale caror opere au marcat profund constiinta colectiva.</p>"
-    ret += "<p>In aceasta sectiune, ne vom opri asupra uneia dintre personalitatile de seama ale literaturii romane: <b>Ioan Slavici<b>. Prozator, jurnalist si om de cultura, Slavici a surprins in scrierile sale viata satului ardelean si complexitatea sufletului taranului roman, contribuind decisiv la conturarea realismului romanesc. Vom explora viata sa, temele centrale ale operei si mostenirea literara pe care a lasat-o generatiilor urmatoare.</p>"
+    ret += "<p>In aceasta sectiune, ne vom opri asupra uneia dintre personalitatile de seama ale literaturii romane: <b>Ioan Slavici</b>. Prozator, jurnalist si om de cultura, Slavici a surprins in scrierile sale viata satului ardelean si complexitatea sufletului taranului roman, contribuind decisiv la conturarea realismului romanesc. Vom explora viata sa, temele centrale ale operei si mostenirea literara pe care a lasat-o generatiilor urmatoare.</p>"
     ret += f"<a href={url_for('scriitor')}>Aflati mai multe detalii despre scriitorul Ioan Slavici</a>"
     return ret
 

@@ -49,9 +49,9 @@ pipeline {
             steps {
                 echo "Build Docker pentru John_Steinbeck (ID: ${BUILD_NUMBER})"
                 sh '''
-                    docker build -t John_Steinbeck:v${BUILD_NUMBER} .
-                    docker rm -f John_Steinbeck${BUILD_NUMBER}  true
-                    docker create --name vultur${BUILD_NUMBER} -p 8020:5000 John_Steinbeck:v${BUILD_NUMBER}
+                    docker build -t john_steinbeck:v${BUILD_NUMBER} .
+                    docker rm -f john_steinbeck${BUILD_NUMBER}  true
+                    docker create --name john_steinbeck${BUILD_NUMBER} -p 8020:5000 john_steinbeck:v${BUILD_NUMBER}
                 '''
             }
         }

@@ -13,27 +13,27 @@ pipeline {
                     python3 -m venv venv
                     . ${VENV_PATH}/bin/activate
                     pip install --upgrade pip
-                    pip install -r requirements.txt
+                    pip install -r quickrequirements.txt
                 '''
             }
         }
 
         stage('Pylint - Calitate cod') {
-            steps {
-                echo 'Rulare pylint pe cod...'
-                sh '''
-                    . ${VENV_PATH}/bin/activate
-                    echo 'Analiză lib/.py'
-                    pylint --exit-zero lib/.py  true
+    steps {
+        echo 'Rulare pylint pe cod...'
+        sh '''
+            echo 'Analiză lib/.py'
+            ./venv/bin/pylint --exit-zero lib/.py || true
 
-                    echo 'Analiză test/.py'
-                    pylint --exit-zero test/.py  true
+            echo 'Analiză test/.py'
+            ./venv/bin/pylint --exit-zero test/.py || true
 
-                    echo 'Analiză John_Steinbeck.py'
-                    pylint --exit-zero John_Steinbeck.py  true
-                '''
-            }
-        }
+            echo 'Analiză John_Steinbeck.py'
+            ./venv/bin/pylint --exit-zero John_Steinbeck.py || true
+        '''
+    }
+}
+
 
         stage('Unit Testing') {
             steps {

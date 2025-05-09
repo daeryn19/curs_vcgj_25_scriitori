@@ -15,7 +15,7 @@ def acasa():
     ret += f"<a href={url_for('scriitor')}>Descoperiți mai multe despre viața și operele Agathei Christie</a>"
     return ret
 
-@app.route("/Agathei Christie", methods=['GET'])
+@app.route("/Agathei_Christie", methods=['GET'])
 def scriitor():
     ret = "<center><h1>Agathei Christie</h1></center>"
     ret += "<h2>Agatha Christie – Maestra suspansului și regina literaturii polițiste</h2>"
@@ -28,7 +28,7 @@ def scriitor():
     ret += f"<a href={url_for('acasa')}>Acasa</a>"
     return ret
 
-@app.route("/Agatha Christie/Opera_reprezentativa", methods=['GET'])
+@app.route("/Agatha_Christie/Opera_reprezentativa", methods=['GET'])
 def opera_rep():
     ret = "<center><h1>" +feature.opera_reprezentativa() + "</h1></center>"
     ret += "<p>Una dintre cele mai cunoscute și apreciate opere ale Agathei Christie este romanul „Crima din Orient Express” (Murder on the Orient Express), publicat în 1934. Această poveste fascinantă îl are în centrul acțiunii pe detectivul belgian Hercule Poirot, care investighează o crimă petrecută la bordul faimosului tren.</p>"
@@ -37,11 +37,11 @@ def opera_rep():
     ret += "<p>Pe măsură ce Poirot interoghează pasagerii, descoperă că toți par a avea legături ascunse cu o veche tragedie – răpirea și uciderea unei fetițe. Finalul dezvăluie un complot colectiv neașteptat, în care toți suspecții sunt, de fapt, complici la crimă.</p>"
     ret += "<h2>Meniu de navigare</h2>"
     ret += f"<a href={url_for('curent_lit')}>Curent literat</a><br>"
-    ret += f"<a href={url_for('scriitor')}>Agatha Christie</a><br>"
+    ret += f"<a href={url_for('scriitor')}>Agatha_Christie</a><br>"
     ret += f"<a href={url_for('acasa')}>Acasa</a>"
     return ret
 
-@app.route("/Agatha Christie/Curent_literar", methods=['GET'])
+@app.route("/Agatha_Christie/Curent_literar", methods=['GET'])
 def curent_lit():
     ret = "<center><h1>"+ feature.curent_literar() + "</h1></center>"
     ret += "<p>Agatha Christie este reprezentanta de marcă a literaturii polițiste clasice, un gen care s-a dezvoltat în prima jumătate a secolului XX și face parte din curentul realist. </p>"
@@ -51,7 +51,7 @@ def curent_lit():
     ret += "<p>Spre deosebire de romanele polițiste moderne, care adesea explorează teme întunecate și metode științifice, stilul Agathei Christie rămâne unul elegant, cerebral și profund britanic, ancorat în valorile și convențiile sociale ale epocii sale.</p>"
     ret += "<h2>Meniu de navigare</h2>"
     ret += f"<a href={url_for('opera_rep')}>Opera reprezentativa</a><br>"
-    ret += f"<a href={url_for('scriitor')}>Agatha Christie</a><br>"
+    ret += f"<a href={url_for('scriitor')}>Agatha_Christie</a><br>"
     ret += f"<a href={url_for('acasa')}>Acasa</a>"
     return ret
 @app.cli.command()

@@ -22,10 +22,8 @@
 # Descriere aplicatie
 
 Aplicația dezvoltată are ca temă scriitori și este parte din proiectul VCGJ din cadrul cursului Servicii Cloud și Containerizare. 
-Aceasta este realizată folosind framework-ul Flask, în Python, și conține funcționalitate specifică scriitorului Ioan Slavici.
-Funcționalitatea implementată include afișarea informațiilor despre:
-Opera reprezentativă – "Moara cu noroc"
-Curentul literar – Realism
+Aceasta este realizată folosind framework-ul Flask, în Python, și conține funcționalitate specifică scriitorului ales, in acest caz Agatha Christie.
+
 
 Pentru o navigare mai ușoară în browser, pagina principală oferă linkuri către celelalte secțiuni ale aplicației. Fiecare pagină dedicată (precum cele care afișează informații despre scriitori sau opere) este accesibilă direct din meniul principal.
 

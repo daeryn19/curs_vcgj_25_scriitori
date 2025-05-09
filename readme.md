@@ -74,22 +74,22 @@ In directorul 'app' rulati comenzile:
      * Restarting with stat
     scriitori
 ```
-![image]
+![image](https://github.com/daeryn19/curs_vcgj_25_scriitori/blob/devel_grancea_dana/images/Screenshot%20from%202025-05-09%2013-53-23.png)
 
 
 # Exemple pagina web
 [cuprins](#cuprins)
 ## Pagina principala
-![image]
+![image](https://github.com/daeryn19/curs_vcgj_25_scriitori/blob/devel_grancea_dana/images/Screenshot%20from%202025-05-09%2013-52-27.png)
 
 ## Pagina Ioan Slavici
-![image]
+![image](https://github.com/daeryn19/curs_vcgj_25_scriitori/blob/devel_grancea_dana/images/Screenshot%20from%202025-05-09%2013-52-15.png)
 
 ## Pagina Opera reprezentativa 
-![image]
+![image](https://github.com/daeryn19/curs_vcgj_25_scriitori/blob/devel_grancea_dana/images/Screenshot%20from%202025-05-09%2013-52-03.png)
 
 ## Pagina Curent literar
-![image]
+![image](https://github.com/daeryn19/curs_vcgj_25_scriitori/blob/devel_grancea_dana/images/Screenshot%20from%202025-05-09%2013-51-20.png)
 
 # Testare cu pytest
 [cuprins](#cuprins)
@@ -253,7 +253,7 @@ Puteti gasi pasii de configurare pe [docs.docker.com - linux-postinstall](https:
 Daca folositi masina virtuala linux, restartati masina dupa ce faceti configuratia.
          
       dana@dana:scriitori$ jenkins
-
+![image](https://github.com/daeryn19/curs_vcgj_25_scriitori/blob/devel_grancea_dana/images/Screenshot%20from%202025-05-09%2014-24-13.png)
 
 # Bibliografie:
 [cuprins](#cuprins)

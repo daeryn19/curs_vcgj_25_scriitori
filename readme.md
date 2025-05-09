@@ -112,11 +112,11 @@ Executia testelor se face cu oricare din comenzile de mai jos, apelate din direc
 # Docker
 [cuprins](#cuprins)
 
-##Creare container
+## Creare container
 
 Dupa crearea Dockerfile, in acelasi director cu acest fisier - pentru acest caz
 scriitori, trebuie executata comanda:
- sudo docker build -t scriitori:v01 .
+    sudo docker build -t scriitori:v01 .
 
 Aceasta creeaza o imagine de container care poate fi vizualizata cu comanda:
  
@@ -132,8 +132,9 @@ Aceasta creeaza o imagine de container care poate fi vizualizata cu comanda:
       crea imaginea scriitori:v01
     - imaginea scriitori, creata pe baza imaginii python, in care se
       creaza venv-ul, se instaleaza pachetele necesare aplicatiei, se copiaza
-[cuprins](#cuprins)      codul aplicatiei - conform Dockerfile
-##Executie container
+      codul aplicatiei - conform Dockerfile
+     
+## Executie container
 
 Pentru a genera un container din fisierul imagine trebuie executata comanda run:
 
@@ -157,38 +158,63 @@ Pentru a genera un container din fisierul imagine trebuie executata comanda run:
                    altfel docker va crea un string aleator si-l va aloca ca nume
                    container-ului pornit
 
-##Vizualizare containere
+## Vizualizare containere
 
     - vizualizare continere care ruleaza
 
 
     sudo docker ps
 
-    CONTAINER ID   IMAGE                            COMMAND              CREATED          STATUS          PORTS                                       NAMES
-    0e9388ac0d7d   scriitori:v01                      "./dockerstart.sh"   2 hours ago      Up 22 minutes   0.0.0.0:8020->5011/tcp, :::8020->5011/tcp   scriitori
+    CONTAINER ID   IMAGE                 COMMAND              CREATED          STATUS           PORTS                                       NAMES
+    0e9388ac0d7d   scriitori:v01         "./dockerstart.sh"   2 hours ago      Up 22 minutes    0.0.0.0:8020->5011/tcp, :::8020->5011/tcp   scriitori
 
     - vizualizarea tuturor containerelor (inclusiv cele oprite)
 
 
     sudo docker ps -a
 
-    CONTAINER ID   IMAGE                            COMMAND              CREATED          STATUS                     PORTS                                       NAMES
-    0e9388ac0d7d   scriitori:v01                      "./dockerstart.sh"   2 hours ago      Exited (0) 6 seconds ago                                            scriitori
+    CONTAINER ID   IMAGE                COMMAND              CREATED          STATUS                     PORTS                   NAMES
+    0e9388ac0d7d   scriitori:v01        "./dockerstart.sh"   2 hours ago      Exited (0) 6 seconds ago                           scriitori
 
 
 
-##Oprire / pornire container - cu aplicatia din container
+## Oprire / pornire container - cu aplicatia din container
 
     sudo docker stop scriitori
     sudo docker start scriitori
+    
+## Tratare probleme (Debugging)
 
-##Curatenie - stergere containere / imagini
+In cazul in care containerul nu porneste poate fi folosita comanda de mai jos pentru a
+crea un container cu imaginea cu probleme care in loc entrypoint-ul configurat va
+folosi shell ca entrypoint.
+
+    sudo docker run -it --rm --entrypoint sh <image:tag>
+
+
+Inspectare container - conectare la container-ul care ruleaza cu shell
+--
+
+    sudo docker exec -it dana_scriitori sh
+
+    - vizualizare procese pe container (pot fi date si alte comenzi LINUX)
+    
+    ~/app $ ps
+    PID   USER     TIME  COMMAND
+        1 site      0:02 {flask} /home/scriitori/scriitori.venv/bin/python /home/scriitori/scriitori/.venv/bin/flask run -h 0.0.0.0 -p 5011 --reload
+        8 site      0:30 /home/scriitori/scriitori/.venv/bin/python /home/scriitori/scriitori/.venv/bin/flask run -h 0.0.0.0 -p 5011 --reload
+       11 site      0:00 sh
+       17 site      0:00 ps
+   
+(inchiderea terminalului pe container se face cu 'exit')
+
+## Curatenie - stergere containere / imagini
 
 
     sudo docker rm  <container (id, nume)r>
     sudo docker rmi <imagine (id, nume:tag ...)>
 
-##Lista de comenzi docker utile:
+## Lista de comenzi docker utile:
 
         Creare container:            sudo docker build -t <nume>:<tag>
         Vizualizare imagini:         sudo docker images

@@ -39,9 +39,9 @@ Ambele pipeline-uri cloneaza codul, creaza mediul de lucru virtual (venv-ul), il
 
 * ruta standard '/' - URL: http://127.0.0.1:5011
  * rute in aplicatia WEB pentru:
-   * scriitor: '/Agatha Christie' - URL: 'http://127.0.0.1:5011/Agatha Christie',
-   * opera reprezentativa: '/opera_reprezentativa' - 'http://127.0.0.1:5011/Agatha Christie/opera_reprezentativa'
-   * curent literar:       '/curent_literar'       - 'http://127.0.0.1:5011/Agatha Christie/curent_literar'
+   * scriitor: '/Agatha_Christie' - URL: 'http://127.0.0.1:5011/Agatha_Christie',
+   * opera reprezentativa: '/opera_reprezentativa' - 'http://127.0.0.1:5011/Agatha_Christie/opera_reprezentativa'
+   * curent literar:       '/curent_literar'       - 'http://127.0.0.1:5011/Agatha_Christie/curent_literar'
 
 # Configurare
 [cuprins](#cuprins)

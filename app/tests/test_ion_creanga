@@ -1,0 +1,28 @@
+import pytest
+from ion_creanga import app  # importă aplicația ta din ion_creanga.py
+
+@pytest.fixture
+def client():
+    app.config['TESTING'] = True
+    with app.test_client() as client:
+        yield client
+
+def test_home(client):
+    response = client.get('/')
+    assert response.status_code == 200
+    assert b'Ion Creang' in response.data  # verificăm dacă apare numele lui Ion Creangă
+
+def test_biografie(client):
+    response = client.get('/creanga/biografie')
+    assert response.status_code == 200
+    assert b'Ion Creangă s-a născut' in response.data  # verificăm o parte din textul biografiei
+
+def test_opere(client):
+    response = client.get('/creanga/opere')
+    assert response.status_code == 200
+    assert b'Amintiri din copilărie' in response.data  # verificăm un titlu de operă
+
+def test_citat(client):
+    response = client.get('/creanga/citat')
+    assert response.status_code == 200
+    assert b'Vezi bine!' in response.data

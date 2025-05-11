@@ -66,3 +66,150 @@ flask run
 
 Accesează în browser:  
 [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
+
+---
+
+## Functionalitati
+![image](https://github.com/user-attachments/assets/bc731760-e876-43e4-a2d7-db5bd773f28f)
+
+
+## Exemple pagină web
+
+### Pagina principală  
+![image](https://github.com/user-attachments/assets/ad23729a-66f3-4efe-b3b8-fcaf0c015483)
+
+### Pagina scriitorului Mihail Sadoveanu  
+![image](https://github.com/user-attachments/assets/41ec16f1-1ebd-4236-84e2-28d1b91074ba)
+
+### Descriere scriitor  
+![image](https://github.com/user-attachments/assets/94e8dbda-d2a9-4be0-9697-16bdc5a6cda8)
+
+
+### Opere reprezentative  
+![image](https://github.com/user-attachments/assets/c0ecd69a-847a-461e-9b06-8ece0f33375b)
+
+---
+
+## Testare cu pytest
+
+Rulare teste:
+
+```bash
+pytest
+```
+![image](https://github.com/user-attachments/assets/02667f44-129e-4466-8a13-1d9415b97241)
+
+
+---
+
+
+## Docker
+
+### Creare imagine, container si rulare:
+
+```bash
+sudo docker build -t scriitori_victor_hugo .
+```
+
+![image](https://github.com/user-attachments/assets/2bfcddd4-2d23-42cc-ace6-e1046794d078)
+![image](https://github.com/user-attachments/assets/d753b975-6de8-47ab-97d9-a62ee559c549)
+
+### Imagini existente:
+
+```bash
+docker images
+```
+![image](https://github.com/user-attachments/assets/a69fe114-e508-4a9e-a4f0-1a29c440b239)
+
+### Containere existente:
+
+```bash
+sudo docker ps -a
+```
+![image](https://github.com/user-attachments/assets/410a5ead-2d84-41d8-953c-62baef1651e7)
+
+### Oprire container:
+
+```bash
+sudo docker stop epic_hawking
+```
+### Stergere imagine si container:
+
+```bash
+sudo docker rmi scriitori_victor_hugo
+sudo docker rm epic_hawking
+```
+
+
+---
+
+## DevOps CI
+
+### Pipeline Jenkins
+- Fișierul `Jenkinsfile` conține pașii pentru testare și build.
+- Este configurat cu un pipeline declarativ.
+pipeline {
+    agent any
+
+    environment {
+        VENV="./activeaza_venv_jenkins"
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo ' Build - Activare virtualenv și listare fișiere'
+                sh '''
+                    pwd
+                    ls -l
+                    . ${VENV}
+                '''
+            }
+        }
+
+        stage('Calitate cod - pylint') {
+            steps {
+                echo ' Verificare calitate cod cu pylint'
+                sh '''
+                    . ${VENV}
+                    echo 'Verificare app/libs/*.py'
+                    pylint --exit-zero app/libs/*.py || true
+
+                    echo 'Verificare app/tests/*.py'
+                    pylint --exit-zero app/tests/*.py || true
+
+                    echo 'Verificare app/443D_scriitori.py'
+                    pylint --exit-zero app/443D_scriitori.py || true
+                '''
+            }
+        }
+
+        stage('Unit Testing - pytest') {
+            steps {
+                echo ' Rulare teste unitare cu pytest'
+                sh '''
+                    . ${VENV}
+                    pytest
+                '''
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo ' Deploy (în lucru)'
+            }
+        }
+    }
+}
+pipeline {
+    agent any
+    stages {
+        stage('Test') {
+            steps {
+                sh 'pip install -r requirements.txt || true'
+                sh 'pytest'
+            }
+        }
+    }
+}

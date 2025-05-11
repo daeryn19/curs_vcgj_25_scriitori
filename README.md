@@ -36,7 +36,30 @@ Pagini interconectate prin linkuri pentru navigare ușoară.
 Aplicația este containerizată cu Docker și conține testare automată cu `pytest`, verificare statică cu `pylint` și pipeline DevOps cu Jenkins.
 
 ---
+## Structura proiectului
 
+```
+curs_vcgj_25_scriitori/
+├── app/
+│   └── libs/
+│       └── feature.py
+├── tests/
+│   └── test_lib.py
+├── Dockerfile
+├── Jenkinsfile
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── pytest.ini
+├── scriitori.py
+├── dockerstart.sh
+├── activeaza_venv
+├── activeaza_venv_jenkins
+├── ruleaza_aplicatia
+└── ruleaza_teste.sh
+```
+
+---
 # Descriere versiune
 
 ## v0.1 – Versiune de bază funcțională
@@ -124,17 +147,9 @@ sudo docker rm scriitori
 sudo docker rmi scriitori:v01
 ```
 
-## Comenzi utile Docker
-
-```bash
-docker build -t scriitori:v01 .
-docker run --name scriitori -p 8020:5011 scriitori:v01
-docker ps -a
-docker stop scriitori
-docker exec -it scriitori sh
-```
 
 ---
+
 
 # DevOps CI
 

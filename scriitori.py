@@ -1,6 +1,6 @@
 from flask import Flask, url_for
-from app.lib import biblioteca_scriitori_opera
-from app.lib import biblioteca_scriitori_gen
+from app.libs import biblioteca_scriitori_opera
+from app.libs import biblioteca_scriitori_gen
 
 print ('Scriitori')
 

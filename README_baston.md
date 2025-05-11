@@ -25,6 +25,18 @@ Proiectul a fost realizat pentru a învăța concepte de bază de lucru cu rute 
 Fișierul principal este `scriitori_baston.py` iar logica este separată într-un modul auxiliar pentru claritate și modularitate.
 
 ---
+### Interfața aplicației
+
+## Interfață - Pagina Rebreanu
+
+![Pagina principală Rebreanu](img/Liviu_Rebreanu.png)
+
+![Pagina despre viață](img/Vlata_Liviu_Rebreanu.png)
+
+![Pagina cu opere](img/Opere_Liviu_Rebreanu.png)
+
+
+---
 
 ## Versiune și status
 **v1.0 – versiune funcțională finalizată**

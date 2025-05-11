@@ -57,7 +57,7 @@ In directorul 'app' rulati comenzile:
 
 2) ruleaza_aplicatia: De rulat doar dupa activarea venv-ului. 
                       Va porni serverul pe IP: 127.0.0.1 si port: 5011.
-                      Acces server din browser: http://127.0.0.1:501
+                      Acces server din browser: http://127.0.0.1:5011
 # EXEMPLU activare venv si rulare
 ```text
     hangiu-ana@hangiu-ana:scriitori$ source activeaza_venv 
@@ -74,6 +74,21 @@ In directorul 'app' rulati comenzile:
      * Restarting with stat
     scriitori
 ```
+
+# Exemplu Pagina Principala
+![image](images/pag_principala.JPG)
+
+#Exemplu Pagina Ruta Sepetys
+![image](images/pag_scriitor.JPG)
+
+# Exemplu Pagina Opera Reprezentativa
+![image](images/op_rep.JPG)
+
+#Exemplu Pagina Curent Literar 
+![image](images/curent_l.JPG)
+
+
+
 # Testare cu pytest
 [cuprins](#cuprins)
 
@@ -245,6 +260,7 @@ Pentru a putea executa ultimul pas din pipeline-ul Jenkins (crearea containerulu
 Pașii de configurare pot fi găsiți pe docs.docker.com - linux-postinstall.
 
 Dacă utilizați o mașină virtuală Linux, asigurați-vă că reporniți mașina după ce finalizați configurarea.
+![image](images/pipeline_giulia.JPG)
 
 
 # Bibliografie:

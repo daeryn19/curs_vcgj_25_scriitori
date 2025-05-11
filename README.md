@@ -1,36 +1,40 @@
 # curs_vcgj_25_scriitori
 
-`CUPRINS 443D + 445D`
+`443D + 445D`
 =======================================
-1.[ABAGIU ANDREEA](#abagiu-andreea)
-2.[ARON RAZVAN](#aron-razvan)
-3.[BASTON IONELA](#baston-ionela)
-4.[BRUMA ANDREI](#bruma-andrei)
-5.[BURLACU ANDREEA](#burlacu-andreea)
-6.[CAZANARU RADU](#cazanaru-radu)
-7.[COFARU STEFAN](#cofaru-stefan)
-8.[DUMITRU MARIA](#dumitru-maria)
-9.[GHIMUS DARIA](#ghimus-daria)
-10.[GRANCEA DANA](#grancea-dana)
-11.[GURAMBA ELENA](#guramba-elena)
-12.[HANGIU ANA](#hangiu-ana)
-13.[IONESCU MIHAI](#ionescu-mihai)
-14.[MARE VLAD](#mare-vlad)
-15.[MARIN CRISTIAN](#marin-cristian)
-16.[MARINESCU ANDREI](#marinescu-andrei)
-17.[MATEI ANDRA](#matei-andra)
-18.[MAZILESCU MIHAI](#mazilescu-mihai)
-19.[MIHAILA ADELIN](#mihaila-adelin)
-20.[PATRASCU GEORGE](#patrascu-george)
-21.[PAUN FLORIN](#paun-florin)
-22.[POPA ADRIAN](#popa-adrian)
-23.[POPESCU VLAD](#popescu-vlad)
-24.[RISTOIU FLORIN](#ristoiu-florin)
-25.[ROTARU MARA](#rotaru-mara)
-26.[SMARANDACHE MIHNEA](#smarandache-mihnea)
-27.[VEGA TUDOR](#vega-tudor)
+
+# CUPRINS
+
+1. [ABAGIU ANDREEA](#abagiu-andreea)
+2. [ARON RAZVAN](#aron-razvan)
+3. [BASTON IONELA](#baston-ionela)
+4. [BRUMA ANDREI](#bruma-andrei)
+5. [BURLACU ANDREEA](#burlacu-andreea)
+6. [CAZANARU RADU](#cazanaru-radu)
+7. [COFARU STEFAN](#cofaru-stefan)
+8. [DUMITRU MARIA](#dumitru-maria)
+9. [GHIMUS DARIA](#ghimus-daria)
+10. [GRANCEA DANA](#grancea-dana)
+11. [GURAMBA ELENA](#guramba-elena)
+12. [HANGIU ANA](#hangiu-ana)
+13. [IONESCU MIHAI](#ionescu-mihai)
+14. [MARE VLAD](#mare-vlad)
+15. [MARIN CRISTIAN](#marin-cristian)
+16. [MARINESCU ANDREI](#marinescu-andrei)
+17. [MATEI ANDRA](#matei-andra)
+18. [MAZILESCU MIHAI](#mazilescu-mihai)
+19. [MIHAILA ADELIN](#mihaila-adelin)
+20. [PATRASCU GEORGE](#patrascu-george)
+21. [PAUN FLORIN](#paun-florin)
+22. [POPA ADRIAN](#popa-adrian)
+23. [POPESCU VLAD](#popescu-vlad)
+24. [RISTOIU FLORIN](#ristoiu-florin)
+25. [ROTARU MARA](#rotaru-mara)
+26. [SMARANDACHE MIHNEA](#smarandache-mihnea)
+27. [VEGA TUDOR](#vega-tudor)
 
 # ABAGIU ANDREEA
+[cuprins](#cuprins)
 
 # Proiect SCC 2025 – Tudor Arghezi
 
@@ -79,18 +83,25 @@
   docker run -p 5050:5000 arghezi_app
 
 # ARON RAZVAN
+[cuprins](#cuprins)
 
 # BASTON IONELA
+[cuprins](#cuprins)
 
 # BRUMA ANDREI
+[cuprins](#cuprins)
 
 # BURLACU ANDREEA
+[cuprins](#cuprins)
 
 # CAZANARU RADU
+[cuprins](#cuprins)
 
 # COFARU STEFAN
+[cuprins](#cuprins)
 
 # DUMITRU MARIA
+[cuprins](#cuprins)
 
 `scriitori`
 ===================================
@@ -363,8 +374,10 @@ Dacă utilizați o mașină virtuală Linux, asigurați-vă că reporniți mași
 
 
 # GHIMUS DARIA
+[cuprins](#cuprins)
 
 # GRANCEA DANA
+[cuprins](#cuprins)
 
 # curs_vcgj_25_scriitori
 
@@ -630,6 +643,7 @@ Daca folositi masina virtuala linux, restartati masina dupa ce faceti configurat
 - [Github Sysinfo](https://github.com/crchende/sysinfo/tree/simplu_main)
 
 # GURAMBA ELENA
+[cuprins](#cuprins)
 
 # curs_vcgj_25_scriitori
 
@@ -843,6 +857,12 @@ pipeline {
 
 ---
 
+## Pull Request
+
+![image](https://github.com/user-attachments/assets/8e220a70-beb1-47b0-a77b-246a956233aa)
+Link : https://github.com/daeryn19/curs_vcgj_25_scriitori/pull/23
+
+
 ## Bibliografie
 
 - [Python](https://docs.python.org/)
@@ -853,6 +873,7 @@ pipeline {
 - [Proiect SCC GitHub (exemplu)](https://github.com/crchende/sysinfo)
 
 # HANGIU ANA
+[cuprins](#cuprins)
 
 `scriitori`
 ===================================
@@ -1113,18 +1134,25 @@ Pentru ca ultimul pas din pipeline-ul Jenkins — crearea containerului Docker �
 - [Github Sysinfo](https://github.com/crchende/sysinfo/tree/simplu_main)
 
 # IONESCU MIHAI
+[cuprins](#cuprins)
 
 # MARE VLAD
+[cuprins](#cuprins)
 
 # MARIN CRISTIAN
+[cuprins](#cuprins)
 
 # MARINESCU ANDREI
+[cuprins](#cuprins)
 
 # MATEI ANDRA
+[cuprins](#cuprins)
 
 # MAZILESCU MIHAI
+[cuprins](#cuprins)
 
 # MIHAILA ADELIN
+[cuprins](#cuprins)
 
 # curs_vcgj_25_scriitori
 
@@ -1311,13 +1339,16 @@ Pentru a se putea executa si ultimul pas din pipeline-ul de Jenkins din acest br
 [Github Sysinfo](https://github.com/crchende/sysinfo/blob/simplu_main)
 
 # PATRASCU GEORGE
+[cuprins](#cuprins)
 
 # PAUN FLORIN
+[cuprins](#cuprins)
 
 # POPA ADRIAN
+[cuprins](#cuprins)
 
 # curs_vcgj_25_scriitori
-
+[cuprins](#cuprins)
 
 ## 📑 Cuprins
 
@@ -1479,8 +1510,10 @@ Pipeline-ul este definit în fișierul `Jenkinsfile` și conține următoarele e
 - [Docker Docs](https://docs.docker.com/)
 
 # POPESCU VLAD
+[cuprins](#cuprins)
 
 # RISTOIU FLORIN
+[cuprins](#cuprins)
 
 # curs_vcgj_25_scriitori
 # 📚 Proiect: Ion Creangă – Prezentare interactivă
@@ -1515,6 +1548,7 @@ Acest proiect este o aplicație web ușoară, dezvoltată cu Flask și container
 ```
 
 # ROTARU MARA
+[cuprins](#cuprins)
 
 # curs_vcgj_25_scriitori
 
@@ -1717,5 +1751,7 @@ CONTAINER ID   IMAGE           COMMAND              CREATED       STATUS        
 - [Github Actions](https://docs.github.com/en/actions)
 
 # SMARANDACHE MIHNEA
+[cuprins](#cuprins)
 
 # VEGA TUDOR
+[cuprins](#cuprins)

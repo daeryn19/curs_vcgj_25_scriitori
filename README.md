@@ -127,7 +127,7 @@ docker run -p 5000:5000 popa_adrian_scriitori_app
 
 ---
 
-## Teste unitare
+## Testare
 
 Fișierul `test/testare.py` conține două clase de test care validează funcțiile `get_descriere()`, `get_carti()` si get_curent_literar. Testele verifică:
 - dacă tipul returnat este string

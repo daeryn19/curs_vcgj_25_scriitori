@@ -23,8 +23,8 @@ pipeline {
                     echo '\n\nVerificare biblioteca/*.py cu pylint\n';
                     pylint --exit-zero biblioteca/*.py;
 
-                    echo '\n\nVerificare tests/*.py cu pylint';
-                    pylint --exit-zero tests/*.py;
+                    echo '\n\nVerificare test/*.py cu pylint';
+                    pylint --exit-zero test/*.py;
 
                     echo '\n\nVerificare scriitori.py cu pylint';
                     pylint --exit-zero scriitori.py;
@@ -38,16 +38,21 @@ pipeline {
                 echo 'Unit testing with Pytest...'
                 sh '''
                     . ./activeaza_venv;
-                    pytest;
+                    flask --app scriitori test;
+                    
                 '''
             }
         }
-        /*    }
-        }*/
+        
         stage('Deploy') {
             agent any
             steps {
-                echo 'IN lucru ! ...'
+                echo "Build ID: ${BUILD_NUMBER}"
+                echo "Creare imagine docker"
+                sh '''
+                    docker build -t scriitori:v${BUILD_NUMBER} .
+                    docker create --name scriitori${BUILD_NUMBER} -p 8020:5011 scriitori:v${BUILD_NUMBER}
+                '''
             }
         }
     }

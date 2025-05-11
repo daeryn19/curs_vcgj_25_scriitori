@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export FLASK_APP=scriitori
-
-flask run -p 5000 --reload

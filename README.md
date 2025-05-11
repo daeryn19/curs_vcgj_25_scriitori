@@ -2,8 +2,7 @@
 
 # 📘 Proiect Scriitori – John Steinbeck  
 **Student**: Popa Adrian  
-**Grupa**: 443D  
-**Profesor**: Conf. Dr. Vlad D.  
+**Grupa**: 443D   
 **Materie**: Sisteme de Calcul și Comunicații (SCC)  
 **An**: 2025  
 
@@ -127,6 +126,7 @@ Pipeline-ul este definit în fișierul `Jenkinsfile` și conține următoarele e
 
 - Rulare aplicație în browser (`localhost:5000`)
 - Build și execuție container Docker
+
 - Jenkins pipeline cu build reușit
 - Teste rulate cu succes
 

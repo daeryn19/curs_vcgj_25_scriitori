@@ -15,9 +15,9 @@
 [cuprins](#cuprins)
 
 Aplicatia `scriitori` prezinta informatii despre scriitorul ales de studentul Mihaila Adelin-Gabriel, **Dmitry Glukhovsky**.  
-Poate fi executata doar pe Linux. A fost testata pe Ubuntu 24.04.02.  
+Poate fi executata doar pe Linux. A fost testata pe Ubuntu 22.04.02.  
 Componenta WEB a aplicatiei se bazeaza pe framework-ul `Flask`.  
-Aplicatia este simpla, afiseaza informatii despre autor - disponibile la butonul "Dmitry Glukhovsky", despre cea mai buna opera a sa - disponibile la butonul "Dmitry Glukhovsky Magnum Opus" si despre genul literar - disponibile la butonul "Genul literar abordat de Dmitry Glukhovsky".
+Aplicatia este simpla, afiseaza informatii despre autor - disponibile la butonul "Dmitry Glukhovsky".
 
 Pentru o navigare mai usoara in browser, pagina principala contine link-uri catre celelalte pagini.  
 Fiecare pagina specifica (cea care afiseaza informatii despre scriitor sau atributele sale) contine un link catre pagina principala.

@@ -16,14 +16,17 @@ Acest proiect este o aplicație web ușoară, dezvoltată cu Flask și container
 ---
 
 ## 📂 Structura proiectului
+```
 .
 ├── ion_creanga.py           # Cod principal Flask
-├── requirements.txt        # Biblioteci necesare
-├── Dockerfile              # Configurare Docker
-├── Jenkinsfile             # Pipeline CI pentru Jenkins
+├── requirements.txt         # Biblioteci necesare
+├── Dockerfile               # Configurare Docker
+├── Jenkinsfile              # Pipeline CI pentru Jenkins
 ├── app/
 │   ├── lib/
-│   │   └── helper.py       # Funcții separate pentru conținut
+│   │   └── helper.py        # Funcții separate pentru conținut
 │   └── tests/
 │       └── test_ion_creanga.py  # Teste unitare
-└── README.md               # Acest fișier
+└── README.md                # Documentație proiect
+```
+

@@ -149,7 +149,7 @@ Your code has been rated at 6.86/10 (previous run: 8.00/10, -1.14)
 # Docker
 [cuprins](#cuprins)
 
-##Creare container
+## Creare container
 
 Crearea imaginii scriitori:v01 cu comanda:
 
@@ -168,13 +168,13 @@ scriitori    v01           1b9b74e75305   2 days ago     86MB
 sysinfo      v01           00871cd7feea   7 weeks ago    275MB
 ```
 
-##Executie container
+## Executie container
 
 Generare container cu comanda:
 
     sudo docker run --name scriitori -p 8020:5011 scriitori:v01 
 
-##Vizualizare containere
+## Vizualizare containere
 
 ```text
 (.venv) mara@ubuntu:~/Desktop/proiect_scc/curs_vcgj_25_scriitori$ sudo docker ps -a

@@ -1,20 +1,25 @@
 # curs_vcgj_25_scriitori
 
-# 📘 Proiect Scriitori – John Steinbeck  
-**Student**: Popa Adrian  
-**Grupa**: 443D   
-**Materie**: Sisteme Cloud si Containizare (SCC)  
-**An**: 2025  
+
+## 📑 Cuprins
+
+1. [ Descriere generală](#-descriere-generală)  
+2. [ Structura proiectului](#-structura-proiectului)  
+3. [ Funcționalități](#-funcționalități)  
+4. [ Comenzi utile](#-comenzi-utile)  
+5. [ Teste cu unittest](#-teste-unitare)  
+6. [ Automatizare Jenkins](#️-automatizare-jenkins)  
+7. [ Bibliografie](#-Bibliografie)
 
 ---
 
-## ✅ Descriere generală
+## Descriere generală
 
-Aplicația Scriitori – John Steinbeck este un proiect educațional dezvoltat în Python, care oferă o prezentare structurată a vieții și operelor scriitorului american John Steinbeck. Aceasta rulează ca o aplicație web minimalistă, construită cu framework-ul Flask, și permite accesarea rapidă a informațiilor printr-o interfață simplă, organizată pe mai multe rute.
+Aplicația Scriitori – John Steinbeck este un proiect dezvoltat în Python, care oferă o prezentare a vieții și operelor scriitorului american John Steinbeck. Aceasta rulează ca o aplicație web minimalistă, construită cu framework-ul Flask, și permite accesarea rapidă a informațiilor printr-o interfață simplă, organizată pe mai multe rute.
 
-Fișierul principal al aplicației gestionează trei rute: pagina principală (/), descrierea autorului (/descriere) si o listă cu operele importante (/carti)
+Fișierul principal al aplicației gestionează trei rute: pagina principală (/), descrierea autorului (/descriere), o listă cu operele importante (/carti) si curentul literar.
 
-Conținutul afișat este generat din funcții separate, organizate în module proprii, stocate în directorul app/lib/. Această abordare permite întreținerea ușoară și extinderea aplicației.
+Conținutul afișat este generat din funcții separate, organizate în module proprii, stocate în directorul app/lib/.
 
 Proiectul include și o componentă de testare automată. Folosind framework-ul unittest, au fost scrise teste pentru funcțiile principale ale aplicației, care verifică integritatea datelor afișate și corectitudinea tipurilor returnate.
 
@@ -34,104 +39,119 @@ Aplicația este containerizată complet prin intermediul unui fișier Dockerfile
 
 ---
 
-## 📂 Structura proiectului
+## Structura proiectului
 
 ```
 ├── app/
-│   ├── John_Steinbeck.py (fișier principal Flask)
+│   ├── popa_adrian_scriitori.py (fișier principal Flask)
 │   └── lib/
-│       ├── descriere.py (descriere autor)
-│       └── carti.py (lista cărți)
+│       ├── descriere.py 
+│       └── carti.py 
+	└── curent_literar.py 
 ├── test/
-│   └── test_testare.py (teste unitar)
+│   └── testare.py 
 ├── Dockerfile
 ├── quickrequirements.txt
 ├── Jenkinsfile
 ├── .gitignore
-└── README_popa_adrian.md
+└── README.md
 ```
 
 ---
 
-## 🚀 Funcționalități
+## Funcționalități
 
-- **Rute Flask:**
-  - `/` – Pagina de start
-  - `/descriere` – Descrierea scriitorului John Steinbeck
-  - `/carti` – Listă cu operele importante ale autorului
+- **Rute**
+ * ruta standard '/' - URL: http://127.0.0.1:5000
+ * rute în aplicația web pentru:
+   * autor: `/John_Steinbeck`
+   * descriere: `/John_Steinbeck/descriere`
+   * cărți: `/John_Steinbeck/carti`
+   * curent literar: `/John_Steinbeck/curent_literar`
 
-- **Testare unitară**
-  - Folosește `unittest` pentru a verifica funcțiile din `descriere.py` și `carti.py`
+- **Testare cu unittest**
+  - Se folosește `unittest` pentru a testa funcțiile principale (`get_descriere`, `get_carti`, `get_curent_literar`) aflate în `app/lib`.
+```bash
+PYTHONPATH=app python3 -m unittest discover -s test
+```
 
 - **Verificare automată a codului**
   - `pylint` rulează automat în Jenkins și verifică calitatea codului
+```bash
+pylint app/lib/*.py
+``
 
 - **Docker**
-  - Aplicația este containerizată și poate fi rulată izolată pe orice mașină cu Docker
+Aplicația este containerizată printr-un `Dockerfile`. Imaginea se poate construi și rula astfel:
+
+```bash
+docker build -t popa_adrian_scriitori_app .
+docker run -p 5000:5000 popa_adrian_scriitori_app
+```
+# DevOps CI
+
+Se folosește Jenkins pentru automatizarea testării și build-ului aplicației.
 
 ---
 
-## 🔧 Comenzi utile
+## Comenzi utile
 
-### 🧪 Activare mediu virtual:
+### Creare de fisiere si clonare repo:
+```bash
+mkdir proiect_scc
+cd proiect_scc
+git clone https://github.com/daeryn19/curs_vcgj_25_scriitori.git
+cd curs_vcgj_25_scriitori
+
+### Activare mediu virtual:
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 📦 Instalare dependențe:
+### Instalare dependențe:
 ```bash
 pip install -r quickrequirements.txt
 ```
 
-### ▶️ Rulare aplicație:
+### Rulare aplicație:
 ```bash
-python3 app/popa_adrian_scriitori.py
+python3 popa_adrian_scriitori.py
 ```
 
-### 🧪 Rulare teste:
+### Build Docker:
 ```bash
-PYTHONPATH=app python3 -m unittest discover -s test
-```
-
-### 🐳 Build Docker:
-```bash
-docker build -t popa_adrian_scriitori:v1 .
-docker run -p 5000:5000 popa_adrian_scriitori:v1
+docker build -t popa_adrian_scriitori_app .
+docker run -p 5000:5000 popa_adrian_scriitori_app
 ```
 
 ---
 
-## 🧪 Teste unitare
+## Teste unitare
 
-Fișierul `test/testare.py` conține două clase de test care validează funcțiile `get_descriere()` și `get_carti()`. Testele verifică:
+Fișierul `test/testare.py` conține două clase de test care validează funcțiile `get_descriere()`, `get_carti()` si get_curent_literar. Testele verifică:
 - dacă tipul returnat este string
 - dacă textul conține numele autorului
+- dacă textul conține curentul literar al autorului 
 
 ---
 
-## ⚙️ Automatizare Jenkins
+## Automatizare Jenkins
 
 Pipeline-ul este definit în fișierul `Jenkinsfile` și conține următoarele etape:
-- Creare și activare `venv`
-- Instalare dependențe
-- Linting cu `pylint`
-- Rulare teste unitare
-- Build imagine Docker
-- Creare container
+
+- clonare repo
+- creare și activare mediu virtual
+- instalare dependințe
+- rulare pylint
+- rulare teste
+- build Docker
 
 ---
 
-## 📸 Capturi de ecran 
+# Bibliografie
 
-- Rulare aplicație în browser (`localhost:5000`)
-- Build și execuție container Docker
-
-- Jenkins pipeline cu build reușit
-- Teste rulate cu succes
-
----
-
-## ✅ Concluzie
-
-Acest proiect demonstrează integrarea unor concepte cheie de dezvoltare software: modularizare, testare, automatizare și containerizare. Prin utilizarea unor unelte moderne precum **Jenkins** și **Docker**, aplicația poate fi testată și livrată rapid într-un mediu controlat.
+- [Documentație Flask](https://flask.palletsprojects.com/)
+- [GitHub Docs](https://docs.github.com/)
+- [Jenkins Docs](https://www.jenkins.io/doc/)
+- [Docker Docs](https://docs.docker.com/)

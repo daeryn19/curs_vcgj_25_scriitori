@@ -6,7 +6,7 @@ echo " Activare mediu virtual (.venv)"
 
 # Setăm variabila de mediu pentru Flask
 echo " Setare variabilă de mediu FLASK_APP"
-export FLASK_APP=app/scriitori.py
+export FLASK_APP=app/443D_scriitori.py
 
 # Afișăm informații despre directorul curent
 cale=$(pwd)

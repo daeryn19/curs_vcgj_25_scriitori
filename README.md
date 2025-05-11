@@ -1,49 +1,70 @@
 # curs_vcgj_25_scriitori
-# Scriitori
+
+Aplicație educațională despre scriitori străini – Victor Hugo.
+
+---
 
 ## Cuprins
 
-1. [Descriere aplicație](#descriere-aplicație)
-2. [Descriere versiune](#descriere-versiune)
-   1. [Buguri cunoscute](#buguri-cunoscute)
+1. [Descriere aplicație](#descriere-aplicație)  
+2. [Versiune](#versiune)  
 3. [Configurare](#configurare)
-4. [Exemple aplicație](#exemple-aplicație)
-5. [Testare cu pytest](#testare-cu-pytest)
-6. [Verificare statică cu pylint](#verificare-statică-cu-pylint)
-7. [Utilizare Docker și containerizare aplicație](#utilizare-docker-și-containerizare-aplicație)
-8. [DevOps](#devops)
-   1. [Pipeline Jenkins](#exemplu-executie-pipeline-jenkins)
-   2. [Workflow GitHub Actions](#exemplu-executie-workflow-github-actions)
-9. [Bibliografie](#bibliografie)
+4. [Functionalitati](#functionalitati)
+5. [Exemple pagină web](#exemple-pagină-web)  
+6. [Testare cu pytest](#testare-cu-pytest)  
+7. [Utilizare Docker și containerizare aplicație](#docker)  
+8. [DevOps CI - Jenkins](#devops-ci)  
+9. [Bibliografie](#bibliografie)  
+
+---
 
 ## Descriere aplicație
 
-Aplicația `scriitori` este o aplicație Flask care servește informații despre viața și operele scriitorilor celebri, cum ar fi Victor Hugo. Aplicația include un API și o interfață web care permite utilizatorilor să interacționeze cu informațiile despre scriitori.
+Aplicația **Scriitori** este o aplicație web simplă, realizată cu Flask, care oferă informații despre viața și opera scriitorului **Victor Hugo**.
 
-Aplicația poate fi rulată pe orice sistem Linux și a fost testată pe Ubuntu 22.04. 
+- Pagina principală afișează un meniu cu scriitorul.
+- Fiecare scriitor are pagini dedicate pentru:
+  - opere reprezentative
+  - descriere scriitor
 
-### Funcționalități:
-- Permite utilizatorilor să acceseze date despre Victor Hugo.
-- Utilizează Flask pentru a expune API-ul și interfața web.
-- Include testare cu `pytest` și verificări statice cu `pylint`.
+Aplicația este testată cu `pytest`, containerizată cu Docker și automatizată cu Jenkins CI.
 
-## Descriere versiune
+---
 
-### v1.0 - Versiunea inițială
-- Ruta principală: `/` - URL: `http://127.0.0.1:5011`
-- API pentru Victor Hugo:
-  - `/victor-hugo` - URL: `http://127.0.0.1:5011/victor-hugo`
-  
-### Probleme cunoscute:
-1. La accesarea mai multor rute simultan, aplicația poate prezenta un comportament neregulat din cauza unei conflicte de rute.
+## Versiune
+
+**v0.1** – Funcționalitate minimă:  
+- pagini pentru scriitor, operă și curent literar  
+- testare automată  
+- fișiere pentru CI și containerizare  
+
+---
 
 ## Configurare
 
 ### Clonare repository
 
-1. Creează un spațiu de lucru și clonează aplicația `scriitori`:
-   ```bash
-   mkdir laborator_scrieri
-   cd laborator_scrieri
-   git clone https://github.com/tunetomc/scriitori.git
+```bash
+git clone -b devel_nume_tău https://github.com/nume-user/curs_vcgj_25_scriitori.git
+cd curs_vcgj_25_scriitori
+
+### Configurare mediu virtual
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Rulare aplicație
+
+```bash
+export FLASK_APP=app/443D_scriitori.py
+flask run
+```
+
+
+Accesează în browser:  
+[http://127.0.0.1:5000](http://127.0.0.1:5000)
+
 

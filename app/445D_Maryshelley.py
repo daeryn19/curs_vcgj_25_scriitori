@@ -1,5 +1,5 @@
 from flask import Flask
-import lib.biblioteca_scriitori
+import lib.biblioteca_scriitori  # Make sure this is the correct import path
 
 app = Flask(__name__)
 
@@ -14,25 +14,25 @@ def index():
 def get_MaryShelley():
     ret = "<h1>Mary Shelley</h1>"
     ret += "Biografie: "
-    ret += lib.biblioteca_scriitori.biografie_shelley()
+    ret += lib.biblioteca_scriitori.biografie_shelley()  # Call function from lib
     ret += "<br>"
 
-    ret += "<b>Lucrare celebră:<b> "
-    ret += lib.biblioteca_scriitori.lucrare_celebra_shelley()
+    ret += "Lucrare celebră: "
+    ret += lib.biblioteca_scriitori.lucrare_celebra_shelley()  # Call function from lib
     ret += "<br>"
-
+    
     return ret
 
 @app.route("/MaryShelley/biografie", methods=['GET'])
 def ia_biografie_shelley():
-    ret = ""
-    ret += lib.biblioteca_scriitori.biografie_shelley()
+    ret = lib.biblioteca_scriitori.biografie_shelley()  # Call function from lib
     return ret
+
 @app.route("/MaryShelley/lucrare", methods=['GET'])
 def ia_lucrare_shelley():
-    ret = ""
-    ret += lib.biblioteca_scriitori.lucrare_celebra_shelley()
+    ret = lib.biblioteca_scriitori.lucrare_celebra_shelley()  # Call function from lib
     return ret
 
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", port=5001)
 
-app.run(host="127.0.0.1", port=5001)

@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r quickrequirements.txt
 EXPOSE 5000
 
 #Rulează aplicația
-CMD ["python", "John_Steinbeck.py"]
+CMD ["python", "popa_adrian_scriitori.py"]

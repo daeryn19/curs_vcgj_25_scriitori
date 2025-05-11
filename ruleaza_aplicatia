@@ -1,0 +1,8 @@
+#!/bin/bash
+#LINUX
+export FLASK_APP=scriitori
+
+#WINDOWS
+#set FLASK_APP=scriitori
+
+flask run -p 5011 --reload

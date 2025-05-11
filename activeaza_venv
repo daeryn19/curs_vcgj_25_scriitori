@@ -1,0 +1,11 @@
+# venv-ul se gaseste in directorul parinte: .venv
+# source ../.venv/bin/activate
+. .venv/bin/activate
+
+if [ $? -eq 0 ]
+then
+    echo "SUCCES: venv a fost activat."
+else
+    echo "ESUAT: venv nu se poate activa."
+    . ./activeaza_venv_jenkins
+fi

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Alege aplicația Flask: scriitori sau sysinfo
+APP_NAME="scriitori"
+
+export FLASK_APP=$APP_NAME
+flask run -p 5011 --reload

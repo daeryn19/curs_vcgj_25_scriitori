@@ -189,6 +189,12 @@ pipeline {
     }
 }
 ```
+![image](https://github.com/user-attachments/assets/1de49c62-0e29-4c72-8d0c-f7fb901310bd)
+![image](https://github.com/user-attachments/assets/dc03b311-bc51-4a94-87bc-a766928227c5)
+```
+Pull Request
+![image](https://github.com/user-attachments/assets/ee710d12-470c-4d5d-aa2b-4345258ad978)
+
 
 ## Bibliografie
 

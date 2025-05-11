@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh '''
+                    ls -l /var/lib/jenkins/workspace/${JOB_NAME}	
                     cd app;
                     pwd;
                     ls -l;

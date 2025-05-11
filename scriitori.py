@@ -1,3 +1,5 @@
+import sys
+
 from flask import Flask, url_for
 from app.libs import biblioteca_scriitori_opera
 from app.libs import biblioteca_scriitori_gen

@@ -5,13 +5,13 @@
 
 # Cuprins
 
-1. [Descriere aplicatie] (#descriere-aplicatie)
+1. [Descriere aplicatie](#descriere-aplicatie)
 2. [Descriere versiune](#descriere-versiune)
 3. [Configurare](#configurare)
 4. [Exemple pagina web](#exemple-pagina-web)
 5. [Testare cu pytest](#testare-cu-pytest)
 6. [Verificare statica. pylint - calitate cod](#verificare-statica-cu-pylint)
-7. [Containerizare cu Docker] (#containerizare-docker)
+7. [Containerizare cu Docker](#containerizare-docker)
 8. [Pipeline Jenkins](#exemplu-executie-pipeline-jenkins)
 9. [Bibliografie](#bibliografie)
 

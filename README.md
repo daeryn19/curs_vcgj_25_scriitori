@@ -3,7 +3,7 @@
 # 📘 Proiect Scriitori – John Steinbeck  
 **Student**: Popa Adrian  
 **Grupa**: 443D   
-**Materie**: Sisteme de Calcul și Comunicații (SCC)  
+**Materie**: Sisteme Cloud si Containizare (SCC)  
 **An**: 2025  
 
 ---

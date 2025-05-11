@@ -1,64 +1,37 @@
 pipeline {
     agent any
 
-    environment {
-        VENV="./activeaza_venv_jenkins"
-    }
-
     stages {
-        stage('Build') {
+
+        stage('Instalare dependințe') {
             steps {
-                echo ' Build - Activare virtualenv și listare fișiere'
+                echo 'Se instaleaza dependintele...'
                 sh '''
-                    pwd
-                    ls -l
-                    . ${VENV}
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
                 '''
             }
         }
 
-        stage('Calitate cod - pylint') {
+        stage('Testare') {
             steps {
-                echo ' Verificare calitate cod cu pylint'
+                echo 'Se rulează testele...'
                 sh '''
-                    . ${VENV}
-                    echo 'Verificare app/libs/*.py'
-                    pylint --exit-zero app/libs/*.py || true
-
-                    echo 'Verificare app/tests/*.py'
-                    pylint --exit-zero app/tests/*.py || true
-
-                    echo 'Verificare app/443D_scriitori.py'
-                    pylint --exit-zero app/443D_scriitori.py || true
-                '''
-            }
-        }
-
-        stage('Unit Testing - pytest') {
-            steps {
-                echo ' Rulare teste unitare cu pytest'
-                sh '''
-                    . ${VENV}
+                    . venv/bin/activate
                     pytest
                 '''
             }
         }
-
-        stage('Deploy') {
-            steps {
-                echo ' Deploy (în lucru)'
-            }
-        }
     }
-}
-pipeline {
-    agent any
-    stages {
-        stage('Test') {
-            steps {
-                sh 'pip install -r requirements.txt || true'
-                sh 'pytest'
-            }
+
+    post {
+        success {
+            echo 'Build finalizat cu succes!'
+        }
+        failure {
+            echo 'Build eșuat!'
         }
     }
 }

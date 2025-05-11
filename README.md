@@ -147,6 +147,10 @@ Pipeline-ul este definit în fișierul `Jenkinsfile` și conține următoarele e
 - rulare teste
 - build Docker
 
+## Exemplu execuție pipeline Jenkins
+
+![Pipeline Jenkins](static/images/testare_jenkins.scf)
+
 ---
 
 # Bibliografie

@@ -1,5 +1,5 @@
 from app.libs import biblioteca_scriitori_opera
-from app.libs import biblioteca_sctiitori_gen
+from app.libs import biblioteca_scriitori_gen
 
 def test_magnum_opus():
 	assert biblioteca_scriitori_opera.magnum_opus()=="Shatter Me"

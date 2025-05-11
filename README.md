@@ -56,10 +56,14 @@ Aplicația este containerizată cu Docker și conține testare automată cu `pyt
 2. `source ruleaza_aplicatia`
 
 ---
-
+![Pagina principală](images/configurare.png)
 # Exemple pagină web
 
-> Capturi de ecran pot fi adăugate aici odată ce aplicația este rulată în browser și capturile sunt salvate.
+![Scriitori](images/scriitori_universali.png)
+![](images/J.R.R.Tolkien.png)
+![](images/StapanulInelelor.png)
+![](images/Fantasy.png)
+
 
 ---
 
@@ -69,15 +73,15 @@ Testele unitare sunt scrise pentru funcțiile din `app/libs/feature.py` și se a
 
 Comenzi pentru testare:
 ```bash
-pytest
+
 python -m pytest
 flask --app scriitori test
 ```
 
 ---
-
+![](images/pytest.png)
 # Verificare statică cu pylint
-
+pylint - pachet python folosit la testarea calitatii codului (spatii, nume variabile, variabile neutilizate etc.)
 ```bash
 pylint scriitori.py
 ```
@@ -95,15 +99,16 @@ sudo docker build -t scriitori:v01 .
 ## Executare container
 
 ```bash
-sudo docker run --name scriitori -p 8020:5011 scriitori:v01
+sudo docker run -p 5011:5011 scriitori:v1
 ```
-
+![](images/docker_run.png)
 ## Vizualizare containere
 
 ```bash
 sudo docker ps       # cele active
 sudo docker ps -a    # toate
 ```
+![](images/vix_cont.png)
 
 ## Oprire / Pornire container
 
@@ -142,7 +147,7 @@ Pipeline-ul automatizat:
 - construiește imaginea Docker.
 
 ---
-
+![](images/jenkins.png)
 # Bibliografie
 
 - https://ro.wikipedia.org/wiki/J._R._R._Tolkien  

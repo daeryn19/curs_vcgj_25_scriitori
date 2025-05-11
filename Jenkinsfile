@@ -20,7 +20,7 @@ pipeline {
 
         stage('Pylint - Calitate cod') {
             steps {
-                echo 'Rulare pylint pe codul John_Steinbeck...'
+                echo 'Rulare pylint pe codul popa_adrian_scriitori...'
                 sh '''
                     . ${VENV_PATH}/bin/activate
                     echo 'Analiză lib/.py'
@@ -29,8 +29,8 @@ pipeline {
                     echo 'Analiză test/.py'
                     pylint --exit-zero test/.py  true
 
-                    echo 'Analiză John_Steinbeck.py'
-                    pylint --exit-zero John_Steinbeck.py  true
+                    echo 'Analiză popa_adrian_scriitori.py'
+                    pylint --exit-zero popa_adrian_scriitori.py  true
                 '''
             }
         }
@@ -47,11 +47,11 @@ pipeline {
 
         stage('Docker Build & Deploy') {
             steps {
-                echo "Build Docker pentru John_Steinbeck (ID: ${BUILD_NUMBER})"
+                echo "Build Docker pentru popa_adrian_scriitori (ID: ${BUILD_NUMBER})"
                 sh '''
-                    docker build -t john_steinbeck:v${BUILD_NUMBER} .
-                    docker rm -f john_steinbeck${BUILD_NUMBER}  true
-                    docker create --name john_steinbeck${BUILD_NUMBER} -p 8020:5000 john_steinbeck:v${BUILD_NUMBER}
+                    docker build -t popa_adrian_scriitori:v${BUILD_NUMBER} .
+                    docker rm -f popa_adrian_scriitori${BUILD_NUMBER}  true
+                    docker create --name popa_adrian_scriitori${BUILD_NUMBER} -p 8020:5000 popa_adrian_scriitori:v${BUILD_NUMBER}
                 '''
             }
         }
@@ -59,7 +59,7 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline Vultur finalizat cu succes.'
+            echo 'Pipeline scriitori finalizat cu succes.'
         }
         failure {
             echo 'A apărut o eroare în pipeline.'

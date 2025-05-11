@@ -2,7 +2,7 @@ import lib.biblioteca_scriitori as b_scriitori
 
 def test_viata_eminescu():
 	v = b_scriitori.viata_eminescu()
-	if b == "frumoasa":
+	if v == "frumoasa":
 		assert True
 	else:
 		assert False

@@ -22,7 +22,7 @@ Acest proiect este o aplicație web simplă, construită în Flask și container
 📂 Structura proiectului
 ```
 .
-├── ion_creanga.py           # Cod principal Flask
+├── n_stanescu.py           # Cod principal Flask
 ├── requirements.txt         # Biblioteci necesare
 ├── Dockerfile               # Configurare Docker
 ├── Jenkinsfile              # Pipeline CI pentru Jenkins
@@ -30,7 +30,7 @@ Acest proiect este o aplicație web simplă, construită în Flask și container
 │   ├── lib/
 │   │   └── helper.py        # Funcții separate pentru conținut
 │   └── tests/
-│       └── test_ion_creanga.py  # Teste unitare
+│       └── test_n_stanescu.py  # Teste unitare
 └── README.md                # Documentație proiect
 ```
 

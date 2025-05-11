@@ -149,7 +149,7 @@ Pipeline-ul este definit în fișierul `Jenkinsfile` și conține următoarele e
 
 ## Exemplu execuție pipeline Jenkins
 
-![Pipeline Jenkins](static/images/Testare_Jenkins.xcf)
+![Pipeline Jenkins](static/imagini/Testare_Jenkins.xcf)
 
 ---
 

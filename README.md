@@ -72,6 +72,24 @@ In directorul 'app' rulati comenzile:
      * Restarting with stat
     scriitori
 ```
+
+![image](images/activeaza_venv.JPG)
+![image](images/ruleaza_aplicatia.JPG)
+
+#Exemplu pagina principala
+![image](images/acasa.JPG)
+
+#Pagina Agatha Christie
+![image](images/pagina_scriitor.JPG)
+
+#Pagina Opera Reprezentativa
+![image](images/opera_rep.JPG)
+
+#Pagina Curent Literar
+![image](images/curent_literar.JPG)
+
+
+
 # Testare cu pytest
 [cuprins](#cuprins)
 O parte dintre funcțiile din biblioteca aplicației, aflate în fișierul feature.py din directorul libs, au asociate teste unitare. Aceste teste verifică funcționarea corectă a funcțiilor prin apelarea lor cu valori de intrare cunoscute și compararea rezultatului obținut cu cel așteptat. Dacă rezultatul coincide cu valoarea așteptată, testul este marcat ca PASS; în caz contrar, este considerat FAIL.
@@ -83,7 +101,7 @@ Executia testelor se face cu oricare din comenzile de mai jos, apelate din direc
    python -m pytest
    flask --app scriitori test
    
-   (.venv) hangiu-ana@hangiu-ana-VirtualBox:~/Desktop/proiect_ana/curs_vcgj_25_scriitori$ pytest
+(.venv) hangiu-ana@hangiu-ana-VirtualBox:~/Desktop/proiect_ana/curs_vcgj_25_scriitori$ pytest
 ============================================================================ test session starts ============================================================================
 platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
 rootdir: /home/hangiu-ana/Desktop/proiect_ana/curs_vcgj_25_scriitori
@@ -103,9 +121,9 @@ app/test/test_lib.py::test_curent_literar PASSED                                
 - **pylint** - pachet python folosit la testarea calitatii codului (spatii, nume variabile, variabile neutilizate etc.)
 - in cazul de fata, problemele returnate de pylint doar sunt afisate, nu sunt considerate erori
 ```
-   pylint scriitory.py
+pylint scriitory.py
 
-   (.venv) hangiu-ana@hangiu-ana-VirtualBox:~/Desktop/proiect_ana/curs_vcgj_25_scriitori$ pylint scriitori.py
+(.venv) hangiu-ana@hangiu-ana-VirtualBox:~/Desktop/proiect_ana/curs_vcgj_25_scriitori$ pylint scriitori.py
 ************* Module scriitori
 scriitori.py:13:0: C0301: Line too long (143/100) (line-too-long)
 scriitori.py:14:0: C0301: Line too long (441/100) (line-too-long)
@@ -233,7 +251,7 @@ Pentru a genera un container din fisierul imagine trebuie executata comanda run:
 ## Exemplu executie pipeline Jenkins
 Pentru ca ultimul pas din pipeline-ul Jenkins — crearea containerului Docker — să poată fi executat corect în acest branch, este necesar ca utilizatorul sub care rulează Jenkins să aibă permisiunea de a executa comenzi Docker.
 
-
+![image](images/pipeline_ana.JPG)
 # Bibliografie:
 [cuprins](#cuprins)
 - [Github Sysinfo](https://github.com/crchende/sysinfo/tree/simplu_main)

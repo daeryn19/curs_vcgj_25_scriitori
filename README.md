@@ -205,8 +205,7 @@ sudo usermod -aG docker jenkins
 
 ## Bibliografie
 
-- https://github.com/daeryn19/curs_vcgj_25_scriitori  
-- https://flask.palletsprojects.com/  
-- https://docs.pytest.org/  
-- https://docs.docker.com/  
-- https://www.jenkins.io/  
+- https://github.com/crchende/sysinfo – sursa principală de inspirație pentru structură și configurare
+- https://github.com/daeryn19/curs_vcgj_25_scriitori – repository-ul proiectului personal
+- https://flask.palletsprojects.com/ – documentație oficială Flask
+

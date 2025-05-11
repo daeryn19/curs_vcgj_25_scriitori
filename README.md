@@ -79,7 +79,7 @@ Accesează în browser:
 ### Pagina principală  
 ![image](https://github.com/user-attachments/assets/ad23729a-66f3-4efe-b3b8-fcaf0c015483)
 
-### Pagina scriitorului Mihail Sadoveanu  
+### Pagina scriitorului Victor Hugo  
 ![image](https://github.com/user-attachments/assets/41ec16f1-1ebd-4236-84e2-28d1b91074ba)
 
 ### Descriere scriitor  

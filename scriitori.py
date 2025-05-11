@@ -36,7 +36,7 @@ def scriitor():
 @app.route("/scriitor/opera", methods=['GET'])
 def opera_literara():
     ret = "<h1>Tahereh Mafi - </h1>" + biblioteca_scriitori_opera.magnum_opus()
-    ret += "<p>Shatter Me este un thriller romantic distopic pentru adolescenți, scris de Tahereh Mafi și publicat pe 15 noiembrie 2011. Cartea este narată de Juliette, o fată de 17 ani cu o atingere letală, și se remarcă printr-un stil narativ inedit, care include pasaje și fraze tăiate — asemenea însemnărilor dintr-un jurnal intim. Shatter Me este prima dintr-o serie de șapte volume. Următoarele cărți din serie sunt:</p>
+    ret += "<p>Shatter Me este un thriller romantic distopic pentru adolescenți, scris de Tahereh Mafi și publicat pe 15 noiembrie 2011. Cartea este narată de Juliette, o fată de 17 ani cu o atingere letală, și se remarcă printr-un stil narativ inedit, care include pasaje și fraze tăiate — asemenea însemnărilor dintr-un jurnal intim. Shatter Me este prima dintr-o serie de șapte volume. Următoarele cărți din serie sunt:</p>"
     ret += "<p>Unravel Me – publicată pe 5 februarie 2013</p>"
     ret += "<p>Ignite Me – publicată pe 4 februarie 2014</p>"
     ret += "<p>Restore Me – publicată pe 6 martie 2018</p>"

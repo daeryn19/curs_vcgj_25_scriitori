@@ -1,6 +1,7 @@
 ```
 Proiect: Mihai Eminescu – Prezentare interactivă
-Acest proiect este o aplicație web ușoară, dezvoltată cu Flask și containerizată folosind Docker, care oferă o prezentare interactivă a vieții și operei lui Mihai Eminescu. Include pagini tematice despre biografie, poezie, influențe și manuscrise, fiind integrat într-un proces de livrare continuă (CI/CD) cu Jenkins.
+Acest proiect este o aplicație web ușoară, dezvoltată cu Flask și containerizată folosind Docker, care oferă o prezentare interactivă a operei lui Mihai Eminescu. 
+Include pagini tematice despre biografie, poezie, influențe și manuscrise, fiind integrat într-un proces de livrare continuă (CI/CD) cu Jenkins.
 
 Tehnologii folosite
 Python 3.12

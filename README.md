@@ -210,6 +210,12 @@ pipeline {
 
 ---
 
+## Pull Request
+
+![image](https://github.com/user-attachments/assets/8e220a70-beb1-47b0-a77b-246a956233aa)
+Link : https://github.com/daeryn19/curs_vcgj_25_scriitori/pull/23
+
+
 ## Bibliografie
 
 - [Python](https://docs.python.org/)

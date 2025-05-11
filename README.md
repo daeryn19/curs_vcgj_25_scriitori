@@ -117,7 +117,21 @@ Acest fișier conține toate dependințele necesare: Flask, Pytest, Pylint etc.
 source ruleaza_aplicatia
 ```
 
-Acces din browser: `http://127.0.0.1:5000`
+După rulare, în terminal ar trebui să apară un mesaj:
+
+ * Running on http://127.0.0.1:5000
+
+Acesta indică faptul că serverul Flask rulează pe IP-ul local (localhost) și portul 5000.
+
+Mai jos se regasesc capturi cu fiecare pagină a aplicației:
+
+![Acasa](images/Acasa.png)
+
+![Rodica_Ojog_Brasoveanu](images/Rodica_Ojog_Brasoveanu.png)
+
+![Opera_reprezentativa](images/Opera_reprezentativa.png)
+
+![Curent_literar](images/Curent_literar.png)
 
 ---
 

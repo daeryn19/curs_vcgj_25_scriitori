@@ -1,0 +1,7 @@
+#!/bin/bash
+#LINUX
+# Set FLASK_APP to the module path relative to the project root
+export FLASK_APP=app.445D_scriitori
+
+# Run Flask
+flask run -p 5011 --reload

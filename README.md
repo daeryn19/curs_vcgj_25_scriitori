@@ -1,3 +1,4 @@
+```
 .
 ├── mihai_eminescu.py          # Cod principal Flask
 ├── requirements.txt           # Biblioteci necesare

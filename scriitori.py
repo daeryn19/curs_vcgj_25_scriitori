@@ -85,7 +85,7 @@ def opera_literara():
 @app.route("/scriitor/gen", methods=['GET'])
 def gen_literar():
     ret = "<h1>Genul literar abordat de Tahereh Mafi</h1>" + biblioteca_scriitori_gen.genre()
-    ret += "<p>Genul literar romance young adult dystopian combină elemente din mai multe subgenuri literare și atrage o audiență largă, în special adolescenți și tineri adulți. Acest tip de literatură combină tematici romantice cu povești plasate în societăți distopice, creând o atmosferă tensionată și adesea provocatoare.
+    ret += "<p>Genul literar romance young adult dystopian combină elemente din mai multe subgenuri literare și atrage o audiență largă, în special adolescenți și tineri adulți. Acest tip de literatură combină tematici romantice cu povești plasate în societăți distopice, creând o atmosferă tensionată și adesea provocatoare.</p>"
     ret += "<p>Young Adult (YA)</p>"
     ret += "<p>Young Adult (sau YA) se referă la cărțile destinate adolescenților cu vârste între 12 și 18 ani, dar care sunt adesea citite și de adulți. Cărțile YA abordează experiențele și problemele cu care tinerii se confruntă sau se pot identifica, cum ar fi relațiile, identitatea și creșterea personală. Protagonistul este, de obicei, un tânăr care se confruntă cu provocările vârstei, iar temele comune includ iubirea, prietenia și conflictele interioare.</p>"
     ret += "<p>Dystopian</p>"

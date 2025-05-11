@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Inceput testare') {
-            steps {
-                echo 'Testare...'
-               
-            }
-        }
 
         stage('Instalare dependințe') {
             steps {

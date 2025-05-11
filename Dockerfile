@@ -36,4 +36,3 @@ EXPOSE 5011
 
 # Punctul de intrare în container - comanda care va fi rulată la pornirea containerului
 ENTRYPOINT ["./dockerstart.sh"]
-

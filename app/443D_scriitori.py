@@ -1,3 +1,4 @@
+
 import sys
 from flask import Flask, url_for
 from app.libs import biblioteca_scriitori
@@ -7,7 +8,7 @@ app = Flask(__name__)
 @app.route("/")
 def homepage():
     return f"""
-    <h1>Biblioteca Scriitorilor</h1>
+    <h1>Biblioteca scriitorilor – Burlacu Andreea</h1>
     <ul>
         <li><a href="{url_for('pagina_victor_hugo')}">Victor Hugo</a></li>
     </ul>
@@ -47,3 +48,4 @@ def test():
     """
     import pytest
     sys.exit(pytest.main(["."]))
+

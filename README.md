@@ -30,4 +30,4 @@ Pytest & Pylint (testare și verificare stil)
 │   └── tests/
 │       └── test_eminescu.py   # Teste unitare pentru funcționalitate
 └── README.md                  # Documentație proiect
- ```
+ 

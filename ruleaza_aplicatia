@@ -1,5 +1,0 @@
-#!/bin/bash
-echo "Start Flask:"
-export FLASK_APP=scriitori
-
-flask run -p 5011 --reload

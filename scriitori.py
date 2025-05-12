@@ -25,14 +25,14 @@ def scriitor():
 def opera_rep():
     ret = "<center><h1>" +biblioteca.opera_reprezentativa() + "</h1></center>"
     ret += f"<a href={url_for('curent_lit')}>Curent literat</a><br>"
-    ret += f"<a href={url_for('scriitor')}>Ioan Slavici</a><br>"
+    ret += f"<a href={url_for('scriitor')}>William Shakespear</a><br>"
     ret += f"<a href={url_for('acasa')}>Acasa</a>"
     return ret
 
 @app.route("/William Shakespear/Curent_literar", methods=['GET'])
 def curent_lit():
     ret = "<center><h1>"+ biblioteca.curent_literar() + "</h1></center>"
-    ret += f"<a href={url_for('scriitor')}>Ioan Slavici</a><br>"
+    ret += f"<a href={url_for('scriitor')}>William Shakespear</a><br>"
     ret += f"<a href={url_for('acasa')}>Acasa</a>"
     return ret
 @app.cli.command()

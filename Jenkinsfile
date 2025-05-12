@@ -9,7 +9,7 @@ pipeline {
     stage('Install') {
       steps {
         sh 'python3 -m venv venv'
-        sh 'source venv/bin/activate'
+        sh 'source /venv/bin/activate'
         sh './activeaza_venv'
         sh 'pip install -r quickrequirements.txt'
       }

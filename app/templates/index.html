@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Liviu Rebreanu</title>
+</head>
+<body>
+    <h1>Află informații despre Liviu Rebreanu</h1>
+    <form method="POST">
+        <button type="submit" name="opera">Opera reprezentativă</button>
+        <button type="submit" name="curent">Curentul literar</button>
+    </form>
+    {% if rezultat %}
+        <h2>Rezultat:</h2>
+        <p>{{ rezultat }}</p>
+    {% endif %}
+</body>
+</html>
+

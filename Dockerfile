@@ -11,7 +11,7 @@ WORKDIR /home/scriitori
 COPY app app
 COPY dockerstart.sh dockerstart.sh
 COPY pytest.ini pytest.ini
-COPY requirements.txt requirements.txt
+COPY quickrequirements.txt quickrequirements.txt
 COPY scriitori.py scriitori.py
 
 RUN python3 -m venv .venv

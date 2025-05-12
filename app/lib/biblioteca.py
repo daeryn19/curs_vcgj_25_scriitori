@@ -2,4 +2,4 @@ def opera_reprezentativa():
     return "Hamlet"
 
 def curent_literar():
-    return "Renasterea"
+    return "Renastere"

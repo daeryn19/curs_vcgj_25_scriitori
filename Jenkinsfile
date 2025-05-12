@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Build Docker image') {
       steps {
-        sh 'docker build -t scriitori .'
+        sh 'docker build -t scriitori_app .'
       }
     }
   }

@@ -30,8 +30,9 @@
 23. [POPESCU VLAD](#popescu-vlad)
 24. [RISTOIU FLORIN](#ristoiu-florin)
 25. [ROTARU MARA](#rotaru-mara)
-26. [SMARANDACHE MIHNEA](#smarandache-mihnea)
-27. [VEGA TUDOR](#vega-tudor)
+26. [SIVA ALINA](#siva-alina)
+27. [SMARANDACHE MIHNEA](#smarandache-mihnea)
+28. [VEGA TUDOR](#vega-tudor)
 
 # ABAGIU ANDREEA
 [cuprins](#cuprins)
@@ -2369,6 +2370,9 @@ CONTAINER ID   IMAGE           COMMAND              CREATED       STATUS        
 # Bibliografie:
 [cuprins](#cuprins)
 - [Github Actions](https://docs.github.com/en/actions)
+
+# SIVA ALINA
+[cuprins](#cuprins)
 
 # SMARANDACHE MIHNEA
 [cuprins](#cuprins)

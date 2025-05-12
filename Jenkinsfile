@@ -15,23 +15,6 @@ pipeline {
             }
         }
         
-        stage('pylint - calitate cod') {
-            agent any
-            steps {
-                sh '''
-                    . ./activeaza_venv;
-                    echo '\n\nVerificare libs/*.py cu pylint\n';
-                    pylint --exit-zero libs/*.py;
-
-                    echo '\n\nVerificare tests/*.py cu pylint';
-                    pylint --exit-zero tests/*.py;
-
-                    echo '\n\nVerificare scriitori.py cu pylint';
-                    pylint --exit-zero scriitori.py;
-                '''
-            }
-        }
-
         stage('Unit Testing cu pytest') {
             agent any
             steps {

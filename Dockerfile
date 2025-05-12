@@ -15,7 +15,7 @@ COPY quickrequirements.txt quickrequirements.txt
 COPY scriitori.py scriitori.py
 
 RUN python3 -m venv .venv
-RUN .venv/bin/pip install -r requirements.txt
+RUN .venv/bin/pip install -r quickrequirements.txt
 
 EXPOSE 5011
 ENTRYPOINT ["./dockerstart.sh"]

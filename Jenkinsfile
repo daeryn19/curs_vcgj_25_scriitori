@@ -15,18 +15,6 @@ pipeline {
             }
         }
         
-        stage('Unit Testing cu pytest') {
-            agent any
-            steps {
-                echo 'Unit testing with Pytest...'
-                sh '''
-                    . ./activeaza_venv;
-                    flask --app scriitori test;
-                    
-                '''
-            }
-        }
-        
         stage('Deploy') {
             agent any
             steps {

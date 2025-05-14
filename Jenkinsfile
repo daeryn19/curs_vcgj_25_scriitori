@@ -41,11 +41,12 @@ pipeline {
         echo 'Rulează testele unitare...'
         sh '''
             . ./activeaza_venv;
-            export PYTHONPATH=$PWD/app;
-            pytest tests/;
+            export PYTHONPATH=$PYTHONPATH:$WORKSPACE/app;
+            pytest tests/
         '''
     }
 }
+
 
 
         // Etapa 4 - Docker Build și Deploy

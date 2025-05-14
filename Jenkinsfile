@@ -37,17 +37,16 @@ pipeline {
 
         // Etapa 3 - Testare Unitara cu Pytest
         stage('Unit Testing cu Pytest') {
-            steps {
-                echo 'Rulează testele unitare...'
-                sh '''
-                    # Activare venv
-                    . ./activeaza_venv;
+    steps {
+        echo 'Rulează testele unitare...'
+        sh '''
+            . ./activeaza_venv;
+            export PYTHONPATH=$PWD/app;
+            pytest tests/;
+        '''
+    }
+}
 
-                    # Rulare teste din directorul tests/
-                    pytest tests/;
-                '''
-            }
-        }
 
         // Etapa 4 - Docker Build și Deploy
         stage('Docker Build și Deploy') {

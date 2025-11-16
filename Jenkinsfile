@@ -51,7 +51,19 @@ pipeline {
         stage('Deploy') {
             agent any
             steps {
-                echo 'IN lucru ! ...'
+                echo "Build ID: ${BUILD_NUMBER}"
+                echo "Sterg container vechi (daca exista)..."
+                sh '''
+                    docker stop scriitori || true
+                    docker rm scriitori || true
+
+                    echo "Construiesc imagine Docker..."
+                    docker build -t scriitori:v${BUILD_NUMBER} .
+
+                    echo "Pornesc container pe portul 8020..."
+                    docker run -d --name scriitori -p 8080:5011 scriitori:v${BUILD_NUMBER}
+                '''
+                
             }
         }
     }

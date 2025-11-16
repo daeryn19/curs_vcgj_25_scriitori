@@ -61,7 +61,7 @@ pipeline {
                     docker build -t scriitori:v${BUILD_NUMBER} .
 
                     echo "Pornesc container pe portul 8020..."
-                    docker run -d --name scriitori -p 8080:5011 scriitori:v${BUILD_NUMBER}
+                    docker run -d --name scriitori -p 8020:5011 scriitori:v${BUILD_NUMBER}
                 '''
                 
             }
